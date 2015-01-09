@@ -1,0 +1,373 @@
+body
+{
+    margin:0px;padding:0 0 20px 0;font-size:12px;
+    background-color:#F1F1F1;clear: both;font-family:Arial, Helvetica, sans-serif;
+}
+
+.clearAfter:after
+{
+    content:"";
+    display:block;
+    float:none;
+    clear:both;
+    font-size:0px;
+    height:0px;
+
+}
+
+#mainHeader
+{
+    height:86px;
+    margin:0 auto;
+    background-color:#ffffff;
+}
+
+#mainHeader ul
+{
+    float:right;
+    position:absolute;
+    top:20px;
+    right:500px;
+}
+
+#mainHeader ul li
+{
+    list-style:none;
+    float:left;
+    margin:0 40px 0 0;
+    color:#6E6E6E;
+    font-size:17px;
+    cursor:pointer;
+    padding:5px 0 0 0;
+}
+
+#mainHeader ul li.selected
+{
+    font-weight:bold;
+    color:#84C31A;
+    border-top:solid 5px #84C31A;
+    bottom: 3px;
+    position: relative;
+}
+
+#mainHeader section
+{
+    width:945px;
+    margin:0 auto;
+}
+
+#mainHeader section .logo
+{
+    background-image: url("../img/logo.png");
+    background-repeat:no-repeat;
+    height:29px;
+    width:77px;
+    float:left;
+    position:relative;
+    top:26px;
+}
+
+.headerSep
+{
+    background-image: url("../img/headerSepDot.png");
+    background-repeat: repeat-x;
+    height:1px;
+}
+
+.headerMidStyle
+{
+    background-image: url("../img/headerBottomLine_Small.png");
+    background-repeat:no-repeat;
+    height:30px;
+    width:990px;
+    margin: auto;
+    position:absolute;
+    top: 86px;
+    left: 0;
+    right:0;
+    
+}
+
+#mainContainer
+{
+    width:945px;
+    margin:0 auto;
+    position:relative;
+    margin-top:34px;
+    height:845px;
+}
+
+#leftSection
+{
+    float:left;
+    width:200px;
+}
+
+#notificationSection
+{
+    
+}
+
+.longLine
+{
+    float:left;
+    background-image: url("../img/lineDot.png");
+    background-repeat:repeat-y;
+    width:1px;
+    height:100%;
+    margin:0 18px;
+}
+
+.normalLine
+{
+    float:left;
+    background-image: url("../img/lineDot.png");
+    background-repeat:repeat-y;
+    width:1px;
+    height:390px;
+    margin:0 18px;
+}
+
+.smallLine
+{
+    float:left;
+    background-image: url("../img/lineDot.png");
+    background-repeat:repeat-y;
+    width:1px;
+    height:20px;
+    margin:0 12px;
+}
+
+#notificationSection header
+{
+    background-image: url("../img/notificationsTitle.png");
+    background-repeat:no-repeat;
+    height:30px;
+    width:200px;
+}
+
+.notificationItem
+{
+    margin:15px 0 0 7px;
+    cursor:pointer;
+}
+
+.notificationItem .info:before
+{
+    content: url("../img/infoIcon.png");
+    position:relative; /*or absolute*/
+    left:-5px;
+    top:7px;
+}
+
+.notificationItem .warning:before
+{
+    content: url("../img/warningIcon.png");
+    position:relative; /*or absolute*/
+    left:-5px;
+    top:7px;
+}
+
+.notificationItemTitle
+{
+    font-size:17px;
+    color:#484848;
+
+}
+
+.notificationItemContent
+{
+    font-size:15px;
+    color:#757575;
+    margin:10px 0 0 0;
+    width:185px;
+}
+
+#taskSection
+{
+    margin:28px 0 0 0;
+}
+
+#taskSection header
+{
+    background-image: url("../img/taskTitle.png");
+    background-repeat:no-repeat;
+    height:30px;
+    width:200px;
+}
+
+.taskItem
+{
+    margin: 15px 0 0 7px;
+}
+
+.taskItem .grayBullet:before
+{
+    content: url("../img/grayBullet.png");
+    position:relative; /*or absolute*/
+    left:-5px;
+    top:7px;
+}
+
+.taskItem .orengeBullet:before
+{
+    content: url("../img/orangeBullet.png");
+    position:relative; /*or absolute*/
+    left:-5px;
+    top:7px;
+}
+
+.taskItem .greenBullet:before
+{
+    content: url("../img/greenBullet.png");
+    position:relative; /*or absolute*/
+    left:-5px;
+    top:7px;
+}
+
+.taskItemContent
+{
+    font-size:15px;
+    color:#757575;
+    margin:10px 0 0 0;
+    width:185px;
+    cursor:pointer;
+}
+
+#rightSection
+{
+    float: left;
+    width: 696px;
+}
+
+#followSection
+{
+    float:left;
+}
+
+#followSection header
+{
+    width:383px;
+}
+
+.followTitle
+{
+    background-image: url("../img/followTitle.png");
+    background-repeat:no-repeat;
+    height:23px;
+    width:111px;
+    float:left;
+}
+
+.updateTitle
+{
+    background-image: url("../img/updateTitle.png");
+    background-repeat:no-repeat;
+    height:30px;
+    width:90px;
+    float:left;
+}
+
+.addIcon
+{
+    background-image: url("../img/plusIcon.png");
+    background-repeat:no-repeat;
+    height:24px;
+    width:26px;
+    float:right;
+    cursor:pointer;
+}
+
+#followList
+{
+    margin:22px 0 0 0;
+    width:384px;
+}
+
+.followItem
+{
+    width:94px;
+    height: 111px;
+    background-color: #ffffff;
+    float:left;
+    margin:2px 2px 0 0;
+    cursor:pointer;
+}
+
+.openCaseTitle
+{
+    background-image: url("../img/openCaseTitle.png");
+    background-repeat:no-repeat;
+    height:29px;
+    width:123px;
+    float:left;
+}
+
+#accordionSection
+{
+    width:275px;
+    float:right;
+}
+
+#accordion
+{
+    margin:22px 0 0 0;
+    height:312px;
+}
+
+#accordion p
+{
+    padding-bottom:10px;
+    overflow:scroll-y;
+}
+
+#bottomPart
+{
+    margin:45px 0 0 0;
+}
+
+.updatetabsList
+{
+    float:left;
+    margin:8px 0 0 20px;
+}
+
+.updatetabsList .updateTab
+{
+    float:left;
+    font-size:15px;
+    color:#A8A8A8;
+    cursor:pointer;
+}
+
+
+.updatetabsList .updateTab.selectedTab
+{
+    color:#000000;
+
+}
+
+#updatesContainer
+{
+    width:697px;
+    height:380px;
+    border:solid 1px #E1E1E1;
+    overflow:hidden;
+}
+
+#updateItemlist
+{
+    margin:10px auto;
+    width:654px;
+}
+
+#updatesContainer .updateItem
+{
+    width:212px;
+    height:277px;
+    float:left;
+    margin:2px;
+    border:solid 1px #E1E1E1;
+    background-color:#ffffff;
+    cursor:pointer;
+}
