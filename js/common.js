@@ -1,5 +1,4 @@
 var fiveD = fiveD || {};
-
 fiveD = {
     init: function () {
         $("#accordion").accordion({
