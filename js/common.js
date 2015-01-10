@@ -9,7 +9,18 @@ fiveD = {
             $(".updatetabsList .selectedTab").removeClass("selectedTab");
             $(this).addClass("selectedTab");
         });
+
+        $(".ui-accordion-header").addClass('').click(function(){
+            if($(this).hasClass('ui-accordion-header-active')) {
+                $(this).find('.arrow').removeClass('up-arrow').addClass('down-arrow');
+                $(this).siblings().find('.arrow').removeClass('down-arrow').addClass('up-arrow');
+            }else{
+                $(this).find('.arrow').removeClass('down-arrow').addClass('up-arrow');
+            }
+        });
     }
+
+
 }
 
 

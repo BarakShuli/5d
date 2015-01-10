@@ -24,17 +24,17 @@ body
 
 #mainHeader ul
 {
-    float:right;
-    position:absolute;
-    top:20px;
-    right:500px;
+    float: left;
+    position: relative;
+    top: 20px;
+    left: 120px;
 }
 
 #mainHeader ul li
 {
     list-style:none;
     float:left;
-    margin:0 40px 0 0;
+    margin:0 24px 0 0;
     color:#6E6E6E;
     font-size:17px;
     cursor:pointer;
@@ -65,6 +65,50 @@ body
     float:left;
     position:relative;
     top:26px;
+}
+::-webkit-input-placeholder { font-style: italic; }
+::-moz-placeholder {  font-style: italic; } /* firefox 19+ */
+:-ms-input-placeholder {  font-style: italic; } /* ie */
+input:-moz-placeholder {  font-style: italic; }
+
+#mainHeader .login{
+    float: right;
+    margin: -39px 13px 0px 0px;
+    line-height: 6px;
+}
+
+#mainHeader .login p{
+    font-weight: bold;
+}
+
+#mainHeader .login a{
+    color: #A3CE5A;
+    text-decoration: underline;
+    cursor:pointer;
+    float:right;
+}
+
+#mainHeader .login a:nth-of-type(2){
+    margin: 0px 5px 0px 35px;
+    border-right: 1px solid #DEDEDE;
+    padding-right: 7px;
+}
+
+#mainHeader .search{
+
+    margin: 3px 0px 0px 130px;float: left;
+}
+#mainHeader .search input[type=text]{
+    margin: 30px 45px 0px 0px;
+    width: 176px;
+    height: 25px;
+    border-radius: 30px;
+    border: 1px solid #C2C2C2;
+    outline: none;
+    padding-left: 10px;
+    background-color: #ededed;
+    color: #6E6E6E;
+
 }
 
 .headerSep
@@ -227,7 +271,7 @@ body
 
 .taskItemContent
 {
-    font-size:15px;
+    font-size:14px;
     color:#757575;
     margin:10px 0 0 0;
     width:185px;
@@ -245,8 +289,38 @@ body
     float:left;
 }
 
-#followSection header
-{
+.follow-list-circle{
+    width: 30px;
+    height: 30px;
+    top: 45px;
+    left: 60px;
+    position: relative;
+    z-index: 101;
+    text-align: center;
+    line-height: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.followItem-description{
+    position: relative;
+    top: 50px;
+    z-index: 112;
+    text-align: center;
+}
+
+.followItem-name{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.followItem-id{
+    font-size: 10px;
+    color:#A8A8A8;
+}
+
+#followSection header {
     width:383px;
 }
 
@@ -257,6 +331,7 @@ body
     height:23px;
     width:111px;
     float:left;
+    margin-right: 20px;
 }
 
 .updateTitle
@@ -266,6 +341,7 @@ body
     height:30px;
     width:90px;
     float:left;
+
 }
 
 .addIcon
@@ -277,11 +353,30 @@ body
     float:right;
     cursor:pointer;
 }
+.follow-list-sort{
+    float: left;
+    border-right: 1px solid #A8A8A8;
+    padding-right: 10px;
+    margin: 5px 10px 0px 0px;
+    color: #A8A8A8;
+    font-size: 13px;
+    cursor: pointer;
+}
+.follow-list-sort:nth-of-type(4){
+    border-right: 0px solid;
+}
+
+#followSection .selectedTab{
+    color:#000000;
+}
 
 #followList
 {
     margin:22px 0 0 0;
     width:384px;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.19);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.19);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.19);
 }
 
 .followItem
@@ -289,9 +384,18 @@ body
     width:94px;
     height: 111px;
     background-color: #ffffff;
+    background-image: url("../img/sanda.jpg");
     float:left;
     margin:2px 2px 0 0;
     cursor:pointer;
+}
+
+.followItem img{
+    width: 94px;
+    height: 111px;
+    position: relative;
+    top: -55px;
+    z-index: 100;
 }
 
 .openCaseTitle
@@ -303,16 +407,85 @@ body
     float:left;
 }
 
+.ui-accordion-content{
+    background-image: url("../img/Open_cases_Gradient-08.png");
+}
+
 #accordionSection
 {
     width:275px;
     float:right;
 }
 
+.down-arrow{
+    background-image: url("../img/Arrow_DOWN-05.png");
+}
+
 #accordion
 {
     margin:22px 0 0 0;
     height:312px;
+}
+
+.accordion-circle{
+    width:30px;
+    height:30px;
+    margin: 5px 0px 0px -20px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 10px;
+}
+.blue-circle{
+    background-image: url("../img/Blue_circle_icon.png");
+}
+.orange-circle{
+    background-image: url("../img/Orange_circle_icon.png");
+}
+.red_circle{
+    background-image: url("../img/Red_circle_icon.png");
+}
+.accordion-description{
+    float: left;
+    line-height: 16px;
+    margin: 5px 0px 0px 10px;
+}
+.accordion-name{
+    font-weight: bold;
+    font-size: 12px;
+}
+.accordion-id{
+    font-size: 10px;
+    color:#A8A8A8;
+}
+
+.accordion-table{
+
+}
+
+.accordion-table .table-title{
+    color: #A8A8A8;
+    line-height: 5px;
+    font-size: 12px;
+}
+
+.accordion-table tr td:nth-of-type(1){
+    width:300px;
+}
+
+.arrow{
+    width:30px;
+    height:14px;
+    float: right;
+    margin: 12px 15px 0px 0px;
+}
+.up-arrow{
+    background-image: url("../img/Up_Arrow_icon.png");
+}
+.down-arrow{
+    background-image: url("../img/Down_Arror_icon.png");
 }
 
 #accordion p
@@ -358,7 +531,11 @@ body
 #updateItemlist
 {
     margin:10px auto;
-    width:654px;
+    width:670px;
+    height: 402px;
+    background-image: url("../img/Updates_images.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 #updatesContainer .updateItem
