@@ -1,13 +1,8 @@
 var fiveD = fiveD || {};
-fiveD = {
+fiveD.invest = {
     init: function () {
         $("#accordion").accordion({
-            heightStyle: "fill"
-        });
-
-        $(".updateTab").click(function () {
-            $(".updatetabsList .selectedTab").removeClass("selectedTab");
-            $(this).addClass("selectedTab");
+            heightStyle: "content"
         });
 
         $(".ui-accordion-header").addClass('').click(function () {
@@ -18,6 +13,8 @@ fiveD = {
                 $(this).find('.arrow').removeClass('up-arrow').addClass('down-arrow');
             }
         });
+
+        $(".followItem").draggable({helper: "clone" });
     }
 
 
@@ -26,5 +23,5 @@ fiveD = {
 
 
 $(document).ready(function () {
-    fiveD.init();
+    fiveD.invest.init();
 })
