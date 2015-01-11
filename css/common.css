@@ -632,16 +632,28 @@ input:-moz-placeholder {  font-style: italic; }
     background-color:#E7E7E7;
 }
 
+.investigationAccordion .followItem .peopleImage
+{
+    top:-59px;
+}
+
 .investigationAccordion .followItem, .investigationAccordion .followItem .maskImage, .investigationAccordion .followItem .peopleImage
 {
     width:117px;
     margin:1px 1px 0 1px;
+    
 }
 
 .investigationAccordion .ui-accordion .ui-accordion-content
 {
     width:240px;
     padding:0px;
+}
+
+#investigationContent
+{
+    border:solid 1px red;width:684px;height:315px;
+    position:relative;
 }
 
 /* ===== INVESTIGATION END ====== */

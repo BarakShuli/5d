@@ -14,12 +14,41 @@ fiveD.invest = {
             }
         });
 
-        $(".followItem").draggable({helper: "clone" });
+        $(".followItem").draggable({
+            helper: "clone",
+            containment:$("#investigationContent"),
+            stop: function (event, ui) {
+                fiveD.invest.renderPerson(ui);
+                fiveD.invest.initDroppedEvent();
+            }
+        });
+        
+        
     }
-
-
 }
 
+fiveD.invest.renderPerson = function (ui) {
+    var html = [];
+    var x = ui.offset.top - $("#investigationContent").offset().top;
+    var y = ui.offset.left - $("#investigationContent").offset().left;
+    console.log(x, y);
+    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px">');
+    html.push(' <div class="red_circle follow-list-circle">19</div>');
+    html.push(' <div class="followItem-description">');
+    html.push('  <div class="followItem-name">Lorern Ispum</div>');
+    html.push('  <div class="followItem-id">#1234567899</div>');
+    html.push(' </div>');
+    html.push('  <img class="peopleImage" src="img/sanda.jpg"/>');
+    html.push('  <img class="maskImage" src="img/masking_for_faces_icon.png"/>');
+    html.push('</div>');
+    $("#investigationContent").append(html.join("\n"));
+}
+
+fiveD.invest.initDroppedEvent = function () {
+    $(".droppedFollowItem").draggable({
+        containment: $("#investigationContent")
+    });
+}
 
 
 $(document).ready(function () {
