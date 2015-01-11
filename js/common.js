@@ -1,7 +1,6 @@
 var fiveD = fiveD || {};
 fiveD = {
     init: function () {
-		alert("2222");
 		$("#accordion").accordion({
             heightStyle: "fill"
         });
