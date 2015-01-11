@@ -10,6 +10,11 @@ fiveD = {
             $(this).addClass("selectedTab");
         });
 
+        $(".follow-list-sort").click(function () {
+            $("#followSection .selectedTab").removeClass("selectedTab");
+            $(this).addClass("selectedTab");
+        });
+
         $(".ui-accordion-header").addClass('').click(function () {
             if ($(this).hasClass('ui-accordion-header-active')) {
                 $(this).find('.arrow').removeClass('down-arrow').addClass('up-arrow');
@@ -19,11 +24,7 @@ fiveD = {
             }
         });
     }
-
-
 }
-
-
 
 $(document).ready(function () {
     fiveD.init();

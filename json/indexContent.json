@@ -1,0 +1,75 @@
+{
+    "notification": [
+        {
+            "type": "information",
+            "title": "",
+            "description": ""
+        },
+        {
+            "type": "information",
+            "title": "",
+            "description": ""
+        },
+        {
+            "type": "information",
+            "title": "",
+            "description": ""
+        }
+    ],
+    "followList": [
+        {
+            "id": 1111111,
+            "name": "111 111",
+            "image": "",
+            "rank": 90
+        },
+        {
+            "id": 22222222,
+            "name": "222 222",
+            "image": "",
+            "rank": 50
+        },
+        {
+            "id": 3333333,
+            "name": "333 333",
+            "image": "",
+            "rank": 9
+        },
+        {
+            "id": 4444444,
+            "name": "444 444",
+            "image": "",
+            "rank": 34
+        },
+        {
+            "id": 5555555,
+            "name": "555 555",
+            "image": "",
+            "rank": 67
+        },
+        {
+            "id": 6666666,
+            "name": "666 666",
+            "image": "",
+            "rank": 12
+        },
+        {
+            "id": 77777,
+            "name": "777 777",
+            "image": "",
+            "rank": 87
+        },
+        {
+            "id": 888888,
+            "name": "888 888",
+            "image": "",
+            "rank": 34
+        },
+        {
+            "id": 99999,
+            "name": "999 999",
+            "image": "",
+            "rank": 41
+        }
+    ]
+}
