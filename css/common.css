@@ -245,42 +245,50 @@ input:-moz-placeholder {  font-style: italic; }
     width:200px;
 }
 
-.taskItem
-{
+.taskContainer{
+    width:192px;
+    min-height: 20px;
+    display: flex;
+    margin: 10px 0px 0px -5px;
+}
+
+.taskItem {
     margin: 15px 0 0 7px;
 }
 
-.taskItem .grayBullet:before
-{
+.taskItem .grayBullet {
     content: url("../img/grayBullet.png");
-    position:relative; /*or absolute*/
-    left:-5px;
-    top:7px;
 }
 
-.taskItem .orengeBullet:before
-{
+.taskItem .orengeBullet {
     content: url("../img/orangeBullet.png");
-    position:relative; /*or absolute*/
-    left:-5px;
-    top:7px;
 }
 
-.taskItem .greenBullet:before
-{
+.taskItem .greenBullet {
     content: url("../img/greenBullet.png");
-    position:relative; /*or absolute*/
-    left:-5px;
-    top:7px;
 }
 
-.taskItemContent
-{
-    font-size:14px;
-    color:#757575;
-    margin:10px 0 0 0;
-    width:185px;
-    cursor:pointer;
+.taskItem li{
+    list-style: none;
+}
+
+.taskItem .taskItemBullet{
+    width:20px;
+    height:20px;
+    display: inline-block;
+    float:left;
+}
+
+
+
+.taskItemContent {
+    font-size: 14px;
+    color: #757575;
+    float: left;
+    width: 167px;
+    cursor: pointer;
+    min-height: 20px;
+    margin: 0px 0px 0px 5px;
 }
 
 #rightSection
