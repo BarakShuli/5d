@@ -79,7 +79,7 @@ fiveD = {
             $(this).find(".accordion-circle").addClass(self.followListCircleType[data[index].type]);
             $(this).find(".accordion-circle").html(data[index].rank);
             $(this).find(".accordion-description .accordion-name").html(data[index].name);
-            $(this).find(".accordion-description .accordion-name").html(data[index].id);
+            $(this).find(".accordion-description .accordion-id").html(data[index].id);
         });
 
     },
