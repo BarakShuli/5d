@@ -430,6 +430,7 @@ input:-moz-placeholder {  font-style: italic; }
 
 .ui-accordion-content{
     background-image: url("../img/Open_cases_Gradient-08.png");
+    background-position: -57px;
 }
 
 #accordionSection

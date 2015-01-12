@@ -1,7 +1,6 @@
 var fiveD = fiveD || {};
 fiveD.invest = {
     init: function () {
-        alert("sadas");
         $("#accordion").accordion({
             heightStyle: "content"
         });
