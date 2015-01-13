@@ -661,7 +661,7 @@ input:-moz-placeholder {  font-style: italic; }
 
 #investigationContent
 {
-    border:solid 1px red;width:684px;height:315px;
+    border:solid 1px #000000;width:850px;height:715px;
     position:relative;
 }
 

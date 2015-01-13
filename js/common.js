@@ -34,6 +34,14 @@ fiveD = {
             $(this).addClass("selectedTab");
         });
 
+
+
+        $(".taskItemContent").click(function () {
+            var taskId = $(this).attr("taskId");
+            localStorage.setItem("taksId", taskId);
+            window.location = "investigation.html";
+        });
+
         $(".ui-accordion-header").addClass('').click(function () {
             if ($(this).hasClass('ui-accordion-header-active')) {
                 $(this).find('.arrow').removeClass('down-arrow').addClass('up-arrow');
@@ -49,6 +57,7 @@ fiveD = {
         $(".taskItem").children().each(function(index){
             $(this).find(".taskItemBullet").addClass(self.taskBulletTypeObj[data[index].type]);
             $(this).find(".taskItemContent").html(data[index].description);
+            $(this).find(".taskItemContent").attr("taskId", data[index].id);
         });
     },
 
@@ -201,28 +210,34 @@ fiveD = {
 
             "task" : [
                 {
-                    "type" : "gray",
+                    "id" : "111",
+                    "type": "gray",
                     "description" : "some text some text some text"
 
                 },
                 {
-                    "type" : "gray",
+                    "id": "222",
+                    "type": "gray",
                     "description" : "some text some text some text"
                 },
                 {
-                    "type" : "orange",
+                    "id": "333",
+                    "type": "orange",
                     "description" : "some text some text some text"
                 },
                 {
-                    "type" : "green",
+                    "id": "444",
+                    "type": "green",
                     "description" : "some text some text some text"
 
                 },
                 {
+                    "id": "555",
                     "type" : "green",
                     "description" : "some text some text some text"
                 },
                 {
+                    "id": "666",
                     "type" : "orange",
                     "description" : "some text some text some text"
                 }
