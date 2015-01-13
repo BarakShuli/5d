@@ -428,9 +428,38 @@ input:-moz-placeholder {  font-style: italic; }
     float:left;
 }
 
+.ui-accordion .ui-accordion-content{
+    padding: 1em 1.2em;
+}
+
 .ui-accordion-content{
     background-image: url("../img/Open_cases_Gradient-08.png");
     background-position: -57px;
+}
+
+.ui-accordion-content > div span:first-child{
+    float:left;
+}
+
+.ui-accordion-content > div > span:nth-child(2){
+    float:right;
+}
+
+.ui-accordion-content .title{
+    color:lightgray;
+    font-size: 11px;
+}
+.ui-accordion-content .data-content{
+    color:#000000;
+    font-size: 11px;
+}
+
+.ui-accordion-content .data-underline{
+    color:#85a72f;
+    text-decoration: underline;
+}
+.ui-accordion-content .title-margin{
+    margin:20px 0px 0px 0px;
 }
 
 #accordionSection
@@ -440,7 +469,10 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .down-arrow{
-    background-image: url("../img/Arrow_DOWN-05.png");
+    background-image: url("../img/Down_Arror_icon.png");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: 6px 3px;
 }
 
 #accordion
@@ -461,13 +493,20 @@ input:-moz-placeholder {  font-style: italic; }
     font-size: 10px;
 }
 .blue-circle{
-    background-image: url("../img/Blue_circle_icon.png");
+    background-image: url("../img/Blue_circle_barak.png");
+    background-size: 30px 30px;
+    background-position: -120px;
 }
 .orange-circle{
-    background-image: url("../img/Orange_circle_icon.png");
+    background-image: url("../img/Orange_circle_barak.png");
+    background-size: 30px 30px;
+    background-position: -120px;
 }
 .red_circle{
-    background-image: url("../img/Red_circle_icon.png");
+    background-image: url("../img/Red_circle_barak.png");
+    background-size: 30px 30px;
+    background-position: -120px;
+
 }
 .accordion-description{
     float: left;
@@ -505,9 +544,19 @@ input:-moz-placeholder {  font-style: italic; }
 }
 .up-arrow{
     background-image: url("../img/Up_Arrow_icon.png");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: 6px 3px;
 }
 .down-arrow{
     background-image: url("../img/Down_Arror_icon.png");
+}
+
+.dots{
+    background-image: url("../img/New_Dots_border_06.png");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
 }
 
 #accordion p

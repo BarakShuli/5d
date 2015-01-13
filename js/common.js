@@ -15,8 +15,8 @@ fiveD = {
 
     followListCircleType : {
         red    : "red_circle ",
-        orange : "orange_circle ",
-        blue   : "blue_circle "
+        orange : "orange-circle ",
+        blue   : "blue-circle "
     },
 
     init: function () {
@@ -54,9 +54,10 @@ fiveD = {
 
     tasksDataInit : function(){
         var self = this, data = self.dataObj.task;
-        $(".taskItem").children().each(function(index){
+        $(".taskItem .taskContainer").each(function(index){
             $(this).find(".taskItemBullet").addClass(self.taskBulletTypeObj[data[index].type]);
             $(this).find(".taskItemContent").html(data[index].description);
+
             $(this).find(".taskItemContent").attr("taskId", data[index].id);
         });
     },
@@ -91,158 +92,28 @@ fiveD = {
             $(this).find(".accordion-description .accordion-id").html(data[index].id);
         });
 
+        $("#accordionSection .ui-accordion-content").each(function(index){
+            $(this).find("#reporter").html(data[index].reporter);
+            $(this).find("#status").html(data[index].status);
+            $(this).find("#owner").html(data[index].owner);
+            $(this).find("#tasks").html(data[index].tasks);
+            $(this).find("#firstPerson").html(data[index].people[0]);
+            $(this).find("#otherPeople").html(data[index].people.length-1 + " others");
+        });
+
     },
 
     getContentData : function(){
-        this.dataObj = {
-            "openCase" : [
-                {
-                    "id": 1111111,
-                    "type" : "red",
-                    "name": "111 111",
-                    "rank": 90
-
-                },
-                {
-                    "id": 1111111,
-                    "type" : "blur",
-                    "name": "333 333",
-                    "rank": 13
-
-                },
-                {
-                    "id": 1111111,
-                    "type" : "red",
-                    "name": "999 999",
-                    "rank": 12
-
-                },
-                {
-                    "id": 1111111,
-                    "type" : "orange",
-                    "name": "777 777",
-                    "rank": 11
-
-                }
-            ],
-            "notification": [
-                {
-                    "type": "info",
-                    "title": "3 minutes ago",
-                    "description": "some text some text some text some text some text some text some text some text some text"
-                },
-                {
-                    "type": "info",
-                    "title": "10:16 AM",
-                    "description": "some text some text some text some text some text some text some text some text some text "
-                },
-                {
-                    "type": "warning",
-                    "title": "Yesterday, 4:29 PM",
-                    "description": "some text some text some text some text some text some text some text some text some text "
-                }
-            ],
-            "followList": [
-                {
-                    "id": 1111111,
-                    "type" : "red",
-                    "name": "111 111",
-                    "image": "sanda.jpg",
-                    "rank": 90
-                },
-                {
-                    "id": 22222222,
-                    "type" : "red",
-                    "name": "222 222",
-                    "image": "sanda.jpg",
-                    "rank": 50
-                },
-                {
-                    "id": 3333333,
-                    "type" : "blue",
-                    "name": "333 333",
-                    "image": "sanda.jpg",
-                    "rank": 9
-                },
-                {
-                    "id": 4444444,
-                    "type" : "orange",
-                    "name": "444 444",
-                    "image": "sanda.jpg",
-                    "rank": 34
-                },
-                {
-                    "id": 5555555,
-                    "type" : "red",
-                    "name": "555 555",
-                    "image": "sanda.jpg",
-                    "rank": 67
-                },
-                {
-                    "id": 6666666,
-                    "type" : "blue",
-                    "name": "666 666",
-                    "image": "sanda.jpg",
-                    "rank": 12
-                },
-                {
-                    "id": 77777,
-                    "type" : "blue",
-                    "name": "777 777",
-                    "image": "sanda.jpg",
-                    "rank": 87
-                },
-                {
-                    "id": 888888,
-                    "type" : "orange",
-                    "name": "888 888",
-                    "image": "sanda.jpg",
-                    "rank": 34
-                },
-                {
-                    "id": 99999,
-                    "type" : "red",
-                    "name": "999 999",
-                    "image": "sanda.jpg",
-                    "rank": 41
-                }
-            ],
-
-            "task" : [
-                {
-                    "id" : "111",
-                    "type": "gray",
-                    "description" : "some text some text some text"
-
-                },
-                {
-                    "id": "222",
-                    "type": "gray",
-                    "description" : "some text some text some text"
-                },
-                {
-                    "id": "333",
-                    "type": "orange",
-                    "description" : "some text some text some text"
-                },
-                {
-                    "id": "444",
-                    "type": "green",
-                    "description" : "some text some text some text"
-
-                },
-                {
-                    "id": "555",
-                    "type" : "green",
-                    "description" : "some text some text some text"
-                },
-                {
-                    "id": "666",
-                    "type" : "orange",
-                    "description" : "some text some text some text"
-                }
-            ]
-        }
+        var self = this;
+        $.ajax({
+            url: "json/indexContent.json",
+            dataType: 'json',
+            async: false,
+            success: function(data) {
+                self.dataObj = data;
+            },
+            error : function(){}
+        });
     }
 }
 
