@@ -1,104 +1,171 @@
 {
+    "openCase" : [
+        {
+            "id"    : "1234567",
+            "type"  : "orange",
+            "name"  : "111 111",
+            "rank"  : "90",
+            "reporter" : "somebody1",
+            "owner" : "somebody1",
+            "status": "Ongoing",
+            "tasks"  :"1",
+            "people" : ["777777","","","","","",""]
+
+        },
+        {
+            "id": "1111111",
+            "type" : "blue",
+            "name": "333 333",
+            "rank": "13",
+            "reporter" : "somebody2",
+            "owner" : "somebody2",
+            "status": "Ongoing",
+            "tasks"  :"2",
+            "people" : ["111111","",""]
+
+        },
+        {
+            "id": "1111111",
+            "type" : "red",
+            "name": "999 999",
+            "rank": "12",
+            "reporter" : "somebody3",
+            "owner" : "somebody3",
+            "status": "Ongoing",
+            "tasks"  :"3",
+            "people" : ["22222","",""]
+
+        },
+        {
+            "id": "1111111",
+            "type" : "orange",
+            "name": "777 777",
+            "rank": "11",
+            "reporter" : "somebody4",
+            "owner" : "somebody4",
+            "status": "Ongoing",
+            "tasks"  :"4",
+            "people" : ["333333","","","","","","","","","",""]
+
+        }
+    ],
+
+
     "notification": [
         {
-            "type": "information",
-            "title": "",
-            "description": ""
+            "type": "info",
+            "title": "3 minutes ago",
+            "description": "some text some text some text some text some text some text some text some text some text"
         },
         {
-            "type": "information",
-            "title": "",
-            "description": ""
+            "type": "info",
+            "title": "10:16 AM",
+            "description": "some text some text some text some text some text some text some text some text some text "
         },
         {
-            "type": "information",
-            "title": "",
-            "description": ""
+            "type": "warning",
+            "title": "Yesterday, 4:29 PM",
+            "description": "some text some text some text some text some text some text some text some text some text "
         }
     ],
     "followList": [
         {
-            "id": 1111111,
+            "id": "1111111",
+            "type" : "red",
             "name": "111 111",
-            "image": "",
-            "rank": 90
+            "image": "sanda.jpg",
+            "rank": "90"
         },
         {
-            "id": 22222222,
+            "id": "22222222",
+            "type" : "blue",
             "name": "222 222",
-            "image": "",
-            "rank": 50
+            "image": "sanda.jpg",
+            "rank": "50"
         },
         {
-            "id": 3333333,
+            "id": "3333333",
+            "type" : "red",
             "name": "333 333",
-            "image": "",
-            "rank": 9
+            "image": "sanda.jpg",
+            "rank": "9"
         },
         {
-            "id": 4444444,
+            "id": "4444444",
+            "type" : "orange",
             "name": "444 444",
-            "image": "",
-            "rank": 34
+            "image": "sanda.jpg",
+            "rank": "34"
         },
         {
-            "id": 5555555,
+            "id": "5555555",
+            "type" : "red",
             "name": "555 555",
-            "image": "",
-            "rank": 67
+            "image": "sanda.jpg",
+            "rank": "67"
         },
         {
-            "id": 6666666,
+            "id": "6666666",
+            "type" : "blue",
             "name": "666 666",
-            "image": "",
-            "rank": 12
+            "image": "sanda.jpg",
+            "rank": "12"
         },
         {
-            "id": 77777,
+            "id": "77777",
+            "type" : "blue",
             "name": "777 777",
-            "image": "",
-            "rank": 87
+            "image": "sanda.jpg",
+            "rank": "87"
         },
         {
-            "id": 888888,
+            "id": "888888",
+            "type" : "orange",
             "name": "888 888",
-            "image": "",
-            "rank": 34
+            "image": "sanda.jpg",
+            "rank": "34"
         },
         {
-            "id": 99999,
+            "id": "99999",
+            "type" : "red",
             "name": "999 999",
-            "image": "",
-            "rank": 41
+            "image": "sanda.jpg",
+            "rank": "41"
         }
     ],
-	
-	"tasks" : [
-		{
-			"type" : "topPriority",
-			"description" : "some text some text some text"
-			
-		},
-		{
-			"type" : "topPriority",
-			"description" : "some text some text some text"
-		},
-		{
-			"type" : "highPriority",
-			"description" : "some text some text some text"
-		},
-		{
-			"type" : "lowPriority",
-			"description" : "some text some text some text"
-			
-		},
+
+    "task" : [
         {
-			"type" : "lowPriority",
-			"description" : "some text some text some text"
-		},
-		{
-			"type" : "highPriority",
-			"description" : "some text some text some text"
-		}
-	]
+            "type" : "gray",
+            "description" : "some text some text some text",
+            "taskId" : "1"
+
+        },
+        {
+            "type" : "gray",
+            "description" : "some text some text some text",
+            "taskId" : "2"
+        },
+        {
+            "type" : "orange",
+            "description" : "some text some text some text",
+            "taskId" : "3"
+        },
+        {
+            "type" : "green",
+            "description" : "some text some text some text",
+            "taskId" : "4"
+
+        },
+        {
+            "type" : "green",
+            "description" : "some text some text some text",
+            "taskId" : "5"
+        },
+        {
+            "type" : "orange",
+            "description" : "some text some text some text",
+            "taskId" : "6"
+        }
+    ]
 }
