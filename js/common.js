@@ -36,7 +36,7 @@ fiveD = {
 
 
 
-        $(".taskItemContent").click(function () {
+        $(".taskContainer").click(function () {
             var taskId = $(this).attr("taskId");
             localStorage.setItem("taksId", taskId);
             window.location = "investigation.html";
@@ -57,8 +57,8 @@ fiveD = {
         $(".taskItem .taskContainer").each(function(index){
             $(this).find(".taskItemBullet").addClass(self.taskBulletTypeObj[data[index].type]);
             $(this).find(".taskItemContent").html(data[index].description);
+            $(this).attr("taskId", data[index].taskId);
 
-            $(this).find(".taskItemContent").attr("taskId", data[index].id);
         });
     },
 

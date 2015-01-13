@@ -406,8 +406,8 @@ input:-moz-placeholder {  font-style: italic; }
 .followItem .peopleImage{
     width: 124px;
     height: 111px;
-    position: relative;
-    top: -56px;
+    position: absolute;
+    top: 0px;
     z-index: 100;
 }
 
@@ -506,7 +506,6 @@ input:-moz-placeholder {  font-style: italic; }
     background-image: url("../img/Red_circle_barak.png");
     background-size: 30px 30px;
     background-position: -120px;
-
 }
 .accordion-description{
     float: left;
@@ -692,7 +691,6 @@ input:-moz-placeholder {  font-style: italic; }
 
 .investigationAccordion .followItem .peopleImage
 {
-    top:-59px;
 }
 
 .investigationAccordion .followItem, .investigationAccordion .followItem .maskImage, .investigationAccordion .followItem .peopleImage
@@ -706,12 +704,88 @@ input:-moz-placeholder {  font-style: italic; }
 {
     width:240px;
     padding:0px;
+    border:solid 1px #E7E7E7;
 }
+
+
+.investigationAccordion .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+{
+    background-color:transparent;
+}
+
 
 #investigationContent
 {
-    border:solid 1px #000000;width:850px;height:715px;
+    width:850px;height:715px;
     position:relative;
+}
+
+#investigationContent #personDataMainLayout
+{
+    width:400px;
+    height:470px;
+    position:absolute;
+    top:30px;
+    left:30px;
+    border:solid 1px #D1D1D1;
+    background-color: #ffffff;
+}
+
+#investigationContent #personDataMainLayout .followItem
+{
+    left:0px;
+    float:none;
+    border-bottom:solid 1px #BEBEBE;
+    height:160px;
+}
+
+#investigationContent #personDataMainLayout #rightSide
+{
+    height: 100%;
+    width: 120px;
+    border-right:solid 1px #E9E9E9;
+}
+
+#investigationContent #personDataMainLayout #mainLayoutTabs
+{
+    padding:0px;margin:0px;
+}
+
+#investigationContent #personDataMainLayout #mainLayoutTabs li
+{
+    list-style:none;
+    width:105px;
+    height:45px;
+    border-bottom:solid 1px #BEBEBE;
+    margin:0px;padding:0px;
+    padding:0 0 0 15px;
+    line-height:45px;
+    color:#A5A5A5;
+    cursor:pointer;
+    font-size:15px;
+}
+
+#investigationContent #personDataMainLayout #mainLayoutTabs li.selected
+{
+    color:#ffffff;
+    background-color:#A0CF4F;
+}
+
+#investigationContent #personDataMainLayout .zoomIcon{
+    background-image: url("../img/zoomIcon.png");
+    width:19px;
+    height:22px;
+    float:left;
+    margin:40px 0 0 11px;
+    cursor:pointer;
+}
+#investigationContent #personDataMainLayout .smallAddIcon{
+    background-image: url("../img/smallAddIcon.png");
+    width:19px;
+    height:20px;
+    float:right;
+    margin:40px 11px 0 0;
+    cursor:pointer;
 }
 
 /* ===== INVESTIGATION END ====== */
