@@ -25,13 +25,27 @@ fiveD.invest = {
                 fiveD.invest.initDraggableEvent();
             }
         });
-        
+
         $("#mainLayoutTabs li").click(function () {
             $("#mainLayoutTabs .selected").removeClass("selected");
             $(this).addClass("selected");
         });
         
+    },
+
+    getIdSection : function(){
+        var self = this;
+        $.ajax({
+            url: "investigateSection.html",
+            async: false,
+            success: function(data) {
+                localStorage.setItem("investigateSection",data);
+                $("#rightSide").append($(data).filter("#idSection"));
+            },
+            error : function(){}
+        });
     }
+
 }
 
 fiveD.invest.renderPerson = function (ui) {
@@ -79,4 +93,5 @@ fiveD.invest.initDraggableEvent = function () {
 
 $(document).ready(function () {
     fiveD.invest.init();
+    fiveD.invest.getIdSection();
 })
