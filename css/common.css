@@ -812,7 +812,7 @@ input:-moz-placeholder {  font-style: italic; }
     background-image: url("../img/userEntityMinIcon.png");
     background-repeat:no-repeat;
     width:11px;
-    height:3px;
+    height:11px;
     float:right;
     cursor:pointer;
     margin:15px 10px 0 0;

@@ -6,9 +6,9 @@ fiveD.invest = {
         });
         if (localStorage.getItem("taksId") !== undefined) {
             //this.renderPerson();
-            this.renderPersonDataMainLayout(false);
-            this.renderPersonDataMainLayout("renderPersonGISContent");
-            this.renderPersonDataMainLayout("renderPersonLinksContent");
+            this.renderPersonDataMainLayout(false, false);
+            this.renderPersonDataMainLayout("renderPersonGISContent", false);
+            this.renderPersonDataMainLayout("renderPersonLinksContent", false);
             this.initDraggableEvent();
         }
         $(".ui-accordion-header").addClass('').click(function () {
@@ -29,16 +29,28 @@ fiveD.invest = {
             }
         });
 
-        $("#mainLayoutTabs li").click(function () {
+        $(".mainLayoutTabs li").click(function () {
             var functionName = $(this).attr("functionName");
-            $("mainLayoutTabs .selected").removeClass("selected");
+            $(this).closest(".mainLayoutTabs").find(".selected").removeClass("selected");
             $(this).addClass("selected");
-            $(".personDataMainLayout .rightSide").html(fiveD.invest[functionName]());
+            $(this).closest(".personDataMainLayout").find(".rightSide .rightSideContent").html(fiveD.invest[functionName]());
 
         });
         
     }
 }
+
+fiveD.invest.setSelectedTab = function (activeTabContent, obj) {
+    var className = "selected";
+    if(activeTabContent === "renderPersonGISContent" && obj === "userGIS"){
+        return className;
+    }else if(activeTabContent === "renderPersonLinksContent" && obj === "userLinks"){
+        return className;
+    }else if(activeTabContent === "renderPersonIDContent" && obj === "userId"){
+        return className;
+    }
+}
+
 
 fiveD.invest.renderPerson = function (ui, container) {
     var html = [], x = 100, y=100;
@@ -47,11 +59,10 @@ fiveD.invest.renderPerson = function (ui, container) {
         y = ui.offset.left - $("#investigationContent").offset().left;
     }
     else if (ui === false) {
-        console.log("asasa->", $(container).get(0).offsetLeft);
         x = $(container).get(0).offsetTop;
         y = $(container).get(0).offsetLeft;
     }
-    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px">');
+    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" onclick="fiveD.invest.extendEntity(this)">');
     html.push(' <div class="red_circle follow-list-circle">19</div>');
     html.push(' <div class="followItem-description">');
     html.push('  <div class="followItem-name">Lorern Ispum</div>');
@@ -63,12 +74,20 @@ fiveD.invest.renderPerson = function (ui, container) {
     $("#investigationContent").append(html.join("\n"));
 }
 
-fiveD.invest.renderPersonDataMainLayout = function (funcName) {
-    var html = [], invokfunction = "renderPersonIDContent";
+fiveD.invest.renderPersonDataMainLayout = function (funcName, obj) {
+    var html = [], invokfunction = "renderPersonIDContent", x = 0, y = 0, style = "";
     if (funcName !== false) {
         invokfunction = funcName;
+        html.push('<div class="personDataMainLayout '+ invokfunction +'">');
+    }else if (funcName === false && obj !== false){
+        x = $(obj).get(0).offsetTop;
+        y = $(obj).get(0).offsetLeft;
+        style = "position:absolute;left:" + y + "px;top:" + x + "px";
+        html.push('<div class="personDataMainLayout" style="' + style + '"">');
+    }else if (funcName === false &&  obj === false){
+        html.push('<div class="personDataMainLayout '+ invokfunction +'">');
     }
-    html.push('<div class="personDataMainLayout ' + invokfunction + '">');
+
     html.push('    <section class="LeftSide">');
     html.push('        <div class="followItem">');
     html.push('            <div class="red_circle follow-list-circle">89</div>');
@@ -80,11 +99,11 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName) {
     html.push('            <img class="maskImage" src="img/masking_for_faces_icon.png"/>');
     html.push('        </div>');
     html.push('        <ul class="mainLayoutTabs">');
-    html.push('            <li class="selected" functionName="renderPersonIDContent">ID</li>');
-    html.push('            <li functionName="renderPersonGISContent">GIS</li>');
-    html.push('            <li functionName="renderPersonLinksContent">Links</li>');
-    html.push('            <li functionName="renderPersonDataContent">Data</li>');
-    html.push('            <li functionName="renderPersonNotesContent">Notes</li>');
+    html.push('            <li class="userId '+ this.setSelectedTab(invokfunction, "userId") +'" functionName="renderPersonIDContent">ID</li>');
+    html.push('            <li class="userGIS '+ this.setSelectedTab(invokfunction, "userGIS") +'" functionName="renderPersonGISContent">GIS</li>');
+    html.push('            <li class="userLinks '+ this.setSelectedTab(invokfunction, "userLinks") +'" functionName="renderPersonLinksContent">Links</li>');
+    html.push('            <li class="userData '+ this.setSelectedTab(invokfunction, "userData") +'" functionName="renderPersonDataContent">Data</li>');
+    html.push('            <li class="userNotes '+ this.setSelectedTab(invokfunction, "userNotes") +'" functionName="renderPersonNotesContent">Notes</li>');
     html.push('        </ul>');
     html.push('        <div class="clearAfter">');
     html.push('            <div class="zoomIcon"></div>');
@@ -97,7 +116,7 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName) {
     html.push('             <div class="sepIcon"></div>');
     html.push('             <div class="minIcon" onclick="fiveD.invest.minimizeWindow(this);"></div>');
     html.push('         </div>');
-    html.push(          fiveD.invest[invokfunction]());
+    html.push('         <div class="rightSideContent">' +  fiveD.invest[invokfunction]() + "</div>");
     html.push('    </section>');
     html.push('</div>');
     $("#investigationContent").append(html.join("\n"));
@@ -114,6 +133,17 @@ fiveD.invest.minimizeWindow = function (obj) {
 fiveD.invest.closeWindow = function (obj) {
     var container = $(obj).closest(".personDataMainLayout");
     container.remove();
+}
+
+fiveD.invest.removeEntityItem = function (obj) {
+    var container = $(obj).closest(".followItem");
+    container.remove();
+}
+
+fiveD.invest.extendEntity = function (obj) {
+    var container = $(obj).closest(".followItem");
+    this.renderPersonDataMainLayout(false, container);
+    this.removeEntityItem(obj);
 }
 
 fiveD.invest.renderPersonIDContent = function () {
@@ -170,6 +200,7 @@ fiveD.invest.renderPersonIDContent = function () {
     html.push('         <div class="table-data">Admin</div>');
     html.push('     </div>');
     html.push(' </div>');
+    this.setSelectedTab();
     return html.join("\n");
 }
 
