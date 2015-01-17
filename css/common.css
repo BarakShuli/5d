@@ -390,7 +390,7 @@ input:-moz-placeholder {  font-style: italic; }
     color:#000000;
 }
 
-#followList
+#peopleList
 {
     margin:22px 0 0 0;
     width:378px;
@@ -701,7 +701,7 @@ input:-moz-placeholder {  font-style: italic; }
     border-bottom:solid 1px #BDBDBD;
 }
 
-.investigationAccordion #followList
+.investigationAccordion #peopleList
 {
     width:240px;
     overflow:hidden;
@@ -745,8 +745,7 @@ input:-moz-placeholder {  font-style: italic; }
     min-width:400px;
     width: -moz-max-content;
     width: -webkit-max-content;
-    width: max-content;
-    height:470px;
+    height:530px;
     position:absolute;
     top:30px;
     left:30px;
@@ -758,7 +757,7 @@ input:-moz-placeholder {  font-style: italic; }
 {
     left:0px;
     float:none;
-    border-bottom:solid 1px #BEBEBE;
+    border-bottom:solid 1px #E9E9E9;
     height:160px;
 }
 
@@ -784,7 +783,7 @@ input:-moz-placeholder {  font-style: italic; }
     list-style:none;
     width:105px;
     height:45px;
-    border-bottom:solid 1px #BEBEBE;
+    border-bottom:solid 1px #E9E9E9;
     margin:0px;padding:0px;
     padding:0 0 0 15px;
     line-height:45px;
@@ -804,7 +803,7 @@ input:-moz-placeholder {  font-style: italic; }
     width:19px;
     height:22px;
     float:left;
-    margin:40px 0 0 11px;
+    margin:14px 0 0 11px;
     cursor:pointer;
 }
 #investigationContent .personDataMainLayout .smallAddIcon{
@@ -812,7 +811,7 @@ input:-moz-placeholder {  font-style: italic; }
     width:19px;
     height:20px;
     float:right;
-    margin:40px 11px 0 0;
+    margin:14px 11px 0 0;
     cursor:pointer;
 }
 
@@ -850,11 +849,10 @@ input:-moz-placeholder {  font-style: italic; }
 
 #investigationContent .personDataMainLayout .rightSide{
     float:left;
-    /*width:68%;*/
     width: -moz-max-content;
     width: -webkit-max-content;
-    width: max-content;
     height: 100%;
+    position:relative;
 }
 
 #investigationContent .renderPersonIDContent
@@ -927,7 +925,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 #affilliation div:first-child, #rolePosition div:first-child{
-    margin:0px 0px 10px 0px
+    margin:0px 0px 3px 0px
 }
 
 #affilliation .data-underline{
@@ -955,6 +953,10 @@ input:-moz-placeholder {  font-style: italic; }
     margin: 0px 0px 0px 230px;
 }
 
+.personDataMainLayout .top-nav-RiskFactors{
+    margin: 0px 0px 0px 230px;
+}
+
 .personDataMainLayout .top-nav-LINKS{
     margin: 0px 0px 0px 130px;
 }
@@ -979,6 +981,17 @@ input:-moz-placeholder {  font-style: italic; }
     position: relative;
 }
 
+.personDataMainLayout .bottom-nav
+{
+    position:absolute;
+    bottom:0px;
+    border-top:solid 1px #E9E9E9;
+    width:100%;
+    height:46px;
+    line-height:36px;
+
+}
+
 .personDataMainLayout .bottom-nav li{
     list-style:none;
     float:left;
@@ -986,7 +999,7 @@ input:-moz-placeholder {  font-style: italic; }
     border-right: 1px solid lightgray;
     color:#85a72f;
     padding: 5px 10px 5px 10px;
-    font-size: 14px;
+    font-size: 18px;
 }
 .personDataMainLayout .bottom-nav ul{
     margin :0px 0px 0px -40px;
@@ -1009,4 +1022,6 @@ input:-moz-placeholder {  font-style: italic; }
     height:5px;
     margin:25px 0px 0px 0px
 }
+
+
 /* ===== INVESTIGATION END ====== */
