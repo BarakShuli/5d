@@ -341,7 +341,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 #followSection header {
-    width:383px;
+    width:377px;
 }
 
 .followTitle
@@ -388,6 +388,15 @@ input:-moz-placeholder {  font-style: italic; }
 
 #followSection .selectedTab{
     color:#000000;
+}
+
+#followList
+{
+    margin:22px 0 0 0;
+    width:378px;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.19);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.19);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.19);
 }
 
 #peopleList
