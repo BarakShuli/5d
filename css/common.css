@@ -464,6 +464,7 @@ input:-moz-placeholder {  font-style: italic; }
 .ui-accordion-content .data-underline{
     color:#85a72f;
     text-decoration: underline;
+
 }
 .ui-accordion-content .title-margin{
     margin:20px 0px 0px 0px;
@@ -888,7 +889,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .table-title{
-    font-size: 13px;
+    font-size: 14px;
     color: #848484;
     font-weight: bold;
 }
@@ -898,7 +899,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 #idSection table tr:nth-child(2n){
-    height: 35px;
+    height: 43px;
     vertical-align: top;
 }
 
@@ -908,7 +909,7 @@ input:-moz-placeholder {  font-style: italic; }
 
 
 #idSection hr{
-    border-top: 2px dotted lightgray;
+    border-top: 2px dotted #848484;
     margin:20px 0 0 0;
 }
 
@@ -933,6 +934,7 @@ input:-moz-placeholder {  font-style: italic; }
     color:#85a72f;
     text-decoration: underline;
     font-size: 13px;
+    cursor:pointer;
 }
 
 .topRightToolBar{
@@ -1005,5 +1007,6 @@ input:-moz-placeholder {  font-style: italic; }
     background-repeat: repeat-x;
     width:220px;
     height:5px;
+    margin:25px 0px 0px 0px
 }
 /* ===== INVESTIGATION END ====== */

@@ -197,7 +197,7 @@ fiveD.invest.renderPersonIDContent = function () {
     html.push('         </tr>');
     html.push('         <tr>');
     html.push('             <td id="dateOfBirth" class="table-data">' + personData.dateOfBirth + '</td>');
-    html.push('             <td id="class" class="data">' + personData.age + '</td>');
+    html.push('             <td id="class" class="table-data">' + personData.age + '</td>');
     html.push('         </tr>');
     html.push('         <tr>');
     html.push('             <td class="table-title">Country of Birth</td>');
@@ -212,7 +212,13 @@ fiveD.invest.renderPersonIDContent = function () {
     html.push('             <!--<td></td>-->');
     html.push('         </tr>');
     html.push('         <tr>');
-    html.push('             <td id="nationalities" class="table-data">' + personData.nationalities + '</td>');
+                            var nationalities = personData.nationalities[0];
+                            for(var item in personData.nationalities){
+                                if(item > 0){
+                                    nationalities = nationalities + ", " + personData.nationalities[item];
+                                }
+                            }
+    html.push('             <td id="nationalities" class="table-data">' + nationalities + '</td>');
     html.push('             <!--<td></td>-->');
     html.push('         </tr>');
     html.push('         <tr>');
@@ -228,9 +234,9 @@ fiveD.invest.renderPersonIDContent = function () {
     html.push('     <div class="id-section-line-dot"></div>');
     html.push('     <div id="affilliation">');
     html.push('         <div class="table-title">Alliffication</div>');
-    html.push('         <div class="data-underline">fffffffff</div>');
-    html.push('         <div class="data-underline">aaaaaaaaaa</div>');
-    html.push('         <div class="data-underline">bbbbbbbbbb</div>');
+                        for(var item in personData.alliffication){
+                            html.push('<div class="data-underline">' + personData.alliffication[item] + '</div>');
+                        }
     html.push('     </div>');
     html.push('     <div id="rolePosition">');
     html.push('         <div class="table-title">Role/Position</div>');
@@ -260,8 +266,6 @@ fiveD.invest.renderPersonGISContent = function () {
     html.push('     </ul>');
     html.push('</div>');
     return html.join("\n");
-
-
 }
 
 fiveD.invest.renderPersonLinksContent = function () {
