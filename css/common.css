@@ -610,9 +610,10 @@ input:-moz-placeholder {  font-style: italic; }
     margin:10px auto;
     width:670px;
     height: 402px;
-    background-image: url("../img/Updates_images.png");
+    background-image: url("../img/Updates.png");
     background-repeat: no-repeat;
     background-position: 0 0;
+    background-size: 670px 402px;
 }
 
 #updatesContainer .updateItem
@@ -740,7 +741,10 @@ input:-moz-placeholder {  font-style: italic; }
 
 #investigationContent .personDataMainLayout
 {
-    width:400px;
+    min-width:400px;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
     height:470px;
     position:absolute;
     top:30px;
@@ -760,7 +764,11 @@ input:-moz-placeholder {  font-style: italic; }
 #investigationContent .personDataMainLayout .LeftSide
 {
     height: 100%;
-    width: 120px;
+    /*width: 120px;*/
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
+
     border-right:solid 1px #E9E9E9;
     float:left;
 }
@@ -841,7 +849,10 @@ input:-moz-placeholder {  font-style: italic; }
 
 #investigationContent .personDataMainLayout .rightSide{
     float:left;
-    width:68%;
+    /*width:68%;*/
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
     height: 100%;
 }
 
@@ -873,7 +884,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 #idSection table{
     margin:20px 0 0 0;
-    width:220px;
+    width:249px;
 }
 
 .table-title{
@@ -903,13 +914,13 @@ input:-moz-placeholder {  font-style: italic; }
 
 #idSection #affilliation{
     float:left;
-    width:110px;
+    width:145px;
     height:80px;
     margin:10px 0 0 0;
 }
 #idSection #rolePosition{
     float:left;
-    width:110px;
+    width:100px;
     height:80px;
     margin:10px 0 0 0;
 }
@@ -924,6 +935,75 @@ input:-moz-placeholder {  font-style: italic; }
     font-size: 13px;
 }
 
+.topRightToolBar{
+    float:right;
+    display: inline-block;
+}
+
+#GISSection{
+    background-image: url("../img/4.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 532px 412px;
+    width: 532px;
+    height: 412px;
+}
+
+.personDataMainLayout .top-nav-GIS{
+    margin: 0px 0px 0px 230px;
+}
+
+.personDataMainLayout .top-nav-LINKS{
+    margin: 0px 0px 0px 130px;
+}
+
+.personDataMainLayout .top-nav ul{
+    margin:6px 0px 0px 0px;
+}
+
+.personDataMainLayout .top-nav li{
+    list-style:none;
+    float:left;
+    margin: 0px 19px 0px 0px;
+    cursor: pointer;
+}
 
 
+.personDataMainLayout .top-nav .selected{
+    font-weight:bold;
+    color:#84C31A;
+    border-top:solid 5px #84C31A;
+    bottom: 6px;
+    position: relative;
+}
+
+.personDataMainLayout .bottom-nav li{
+    list-style:none;
+    float:left;
+    margin: 0px 0px 0px 0px;
+    border-right: 1px solid lightgray;
+    color:#85a72f;
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+}
+.personDataMainLayout .bottom-nav ul{
+    margin :0px 0px 0px -40px;
+}
+
+
+#linksSection{
+    background-image: url("../img/4.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 532px 412px;
+    width: 532px;
+    height: 412px;
+}
+
+.id-section-line-dot{
+    background-image: url("../img/lineDot.png");
+    background-repeat: repeat-x;
+    width:220px;
+    height:5px;
+}
 /* ===== INVESTIGATION END ====== */

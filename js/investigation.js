@@ -1,5 +1,14 @@
 var fiveD = fiveD || {};
 fiveD.invest = {
+
+    dataObj : null,
+
+    followListCircleType : {
+        red    : "red_circle",
+        orange : "orange-circle",
+        blue   : "blue-circle"
+    },
+
     init: function () {
         $("#accordion").accordion({
             heightStyle: "content"
@@ -36,7 +45,30 @@ fiveD.invest = {
             $(this).closest(".personDataMainLayout").find(".rightSide .rightSideContent").html(fiveD.invest[functionName]());
 
         });
-        
+    },
+
+    followListDataInit : function(){
+        var self = this, data = self.dataObj.followList;
+        $("#followList .followItem").each(function(index){
+            $(this).find(".follow-list-circle").addClass(self.followListCircleType[data[index].type]);
+            $(this).find(".follow-list-circle").html(data[index].rank);
+            $(this).find(".followItem-description .followItem-name").html(data[index].name);
+            $(this).find(".followItem-description .followItem-id").html(data[index].id);
+            $(this).find(".peopleImage").attr('src','img/' + data[index].image);
+        });
+    },
+
+    getContentData : function(){
+        var self = this;
+        $.ajax({
+            url: "json/investigateContent.json",
+            dataType: 'json',
+            async: false,
+            success: function(data) {
+                self.dataObj = data;
+            },
+            error : function(){}
+        });
     }
 }
 
@@ -62,7 +94,7 @@ fiveD.invest.renderPerson = function (ui, container) {
         x = $(container).get(0).offsetTop;
         y = $(container).get(0).offsetLeft;
     }
-    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" onclick="fiveD.invest.extendEntity(this)">');
+    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" ondblclick="fiveD.invest.extendEntity(this)">');
     html.push(' <div class="red_circle follow-list-circle">19</div>');
     html.push(' <div class="followItem-description">');
     html.push('  <div class="followItem-name">Lorern Ispum</div>');
@@ -75,7 +107,7 @@ fiveD.invest.renderPerson = function (ui, container) {
 }
 
 fiveD.invest.renderPersonDataMainLayout = function (funcName, obj) {
-    var html = [], invokfunction = "renderPersonIDContent", x = 0, y = 0, style = "";
+    var html = [], invokfunction = "renderPersonIDContent", x = 0, y = 0, style = "", taskId = "", personData = "";
     if (funcName !== false) {
         invokfunction = funcName;
         html.push('<div class="personDataMainLayout '+ invokfunction +'">');
@@ -88,14 +120,18 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName, obj) {
         html.push('<div class="personDataMainLayout '+ invokfunction +'">');
     }
 
+    taskId = localStorage.getItem("taksId");
+    this.getContentData();
+    personData = this.dataObj["followList"][parseInt(taskId)];
+
     html.push('    <section class="LeftSide">');
     html.push('        <div class="followItem">');
-    html.push('            <div class="red_circle follow-list-circle">89</div>');
+    html.push('            <div class="' + this.followListCircleType[personData.type] + ' follow-list-circle"' + '>89</div>');
     html.push('            <div class="followItem-description">');
-    html.push('                <div class="followItem-name">Lorern Ispum</div>');
-    html.push('                <div class="followItem-id">#1234567899</div>');
+    html.push('                <div class="followItem-name">' + personData.name + '</div>');
+    html.push('                <div class="followItem-id">' + personData.id + '</div>');
     html.push('            </div>');
-    html.push('            <img class="peopleImage" src="img/sanda.jpg"/>');
+    html.push('            <img class="peopleImage" src="img/' + personData.image + '"/>');
     html.push('            <img class="maskImage" src="img/masking_for_faces_icon.png"/>');
     html.push('        </div>');
     html.push('        <ul class="mainLayoutTabs">');
@@ -147,11 +183,12 @@ fiveD.invest.extendEntity = function (obj) {
 }
 
 fiveD.invest.renderPersonIDContent = function () {
-    var html = [];
+    var html = [], personData = "";
+    personData = this.dataObj["followList"][parseInt(localStorage.getItem("taksId"))];
     html.push('<div id="idSection">');
-    html.push('    <span class="age">33</span>');
+    html.push('    <span class="age">' + personData.age + '</span>');
     html.push('    <span class="small-line">|</span>');
-    html.push('    <span id="gender">Female</span>');
+    html.push('    <span id="gender">' + personData.gender + '</span>');
     html.push('    <table>');
     html.push('        <tbody>');
     html.push('        <tr>');
@@ -159,23 +196,23 @@ fiveD.invest.renderPersonIDContent = function () {
     html.push('             <td class="table-title">Age</td>');
     html.push('         </tr>');
     html.push('         <tr>');
-    html.push('             <td id="dateOfBirth" class="table-data">111111</td>');
-    html.push('             <td id="class" class="data">24</td>');
+    html.push('             <td id="dateOfBirth" class="table-data">' + personData.dateOfBirth + '</td>');
+    html.push('             <td id="class" class="data">' + personData.age + '</td>');
     html.push('         </tr>');
     html.push('         <tr>');
     html.push('             <td class="table-title">Country of Birth</td>');
     html.push('             <td class="table-title">Marital Status</td>');
     html.push('         </tr>');
     html.push('         <tr>');
-    html.push('             <td id="countryOfBith" class="table-data">3333333</td>');
-    html.push('             <td id="maritalStatus" class="table-data">444444</td>');
+    html.push('             <td id="countryOfBith" class="table-data">' + personData.countryOfBirth + '</td>');
+    html.push('             <td id="maritalStatus" class="table-data">' + personData.maritalStatus + '</td>');
     html.push('         </tr>');
     html.push('         <tr>');
     html.push('             <td class="table-title">Nationalities</td>');
     html.push('             <!--<td></td>-->');
     html.push('         </tr>');
     html.push('         <tr>');
-    html.push('             <td id="nationalities" class="table-data">5555555555</td>');
+    html.push('             <td id="nationalities" class="table-data">' + personData.nationalities + '</td>');
     html.push('             <!--<td></td>-->');
     html.push('         </tr>');
     html.push('         <tr>');
@@ -183,12 +220,12 @@ fiveD.invest.renderPersonIDContent = function () {
     html.push('             <!--<td></td>-->');
     html.push('         </tr>');
     html.push('         <tr>');
-    html.push('             <td id="residence" class="table-data">ffff ffff ffff</td>');
+    html.push('             <td id="residence" class="table-data">' + personData.residence + '</td>');
     html.push('             <!--<td></td>-->');
     html.push('         </tr>');
     html.push('         </tbody>');
     html.push('     </table>');
-    html.push('     <hr/>');
+    html.push('     <div class="id-section-line-dot"></div>');
     html.push('     <div id="affilliation">');
     html.push('         <div class="table-title">Alliffication</div>');
     html.push('         <div class="data-underline">fffffffff</div>');
@@ -197,7 +234,7 @@ fiveD.invest.renderPersonIDContent = function () {
     html.push('     </div>');
     html.push('     <div id="rolePosition">');
     html.push('         <div class="table-title">Role/Position</div>');
-    html.push('         <div class="table-data">Admin</div>');
+    html.push('         <div class="table-data">' + personData.rolePosition + '</div>');
     html.push('     </div>');
     html.push(' </div>');
     this.setSelectedTab();
@@ -206,15 +243,45 @@ fiveD.invest.renderPersonIDContent = function () {
 
 fiveD.invest.renderPersonGISContent = function () {
     var html = [];
-    html.push('<div id="GISSection">GIS');
-    html.push(' </div>');
+    html.push('<div class="top-nav top-nav-GIS">');
+    html.push('     <ul class="clearAfter">');
+    html.push('          <li class="selected">Day time</li>');
+    html.push('          <li>24 hrs</li>');
+    html.push('          <li>Night time</li>');
+    html.push('     </ul>');
+    html.push('</div>');
+    html.push('<div id="GISSection">');
+    html.push('</div>');
+    html.push('<div class="bottom-nav">');
+    html.push('     <ul class="clearAfter">');
+    html.push('         <li>Follow</li>');
+    html.push('         <li>Ask more info</li>');
+    html.push('         <li>Alert</li>');
+    html.push('     </ul>');
+    html.push('</div>');
     return html.join("\n");
+
+
 }
 
 fiveD.invest.renderPersonLinksContent = function () {
     var html = [];
-    html.push('<div id="linksSection">LINKS');
-    html.push(' </div>');
+    html.push('<div class="top-nav top-nav-LINKS">');
+    html.push('     <ul class="clearAfter">');
+    html.push('          <li class="selected">Location</li>');
+    html.push('          <li>Connection</li>');
+    html.push('          <li>Organization</li>');
+    html.push('     </ul>');
+    html.push('</div>');
+    html.push('<div id="linksSection">');
+    html.push('</div>');
+    html.push('<div class="bottom-nav">');
+    html.push('     <ul class="clearAfter">');
+    html.push('         <li>Follow</li>');
+    html.push('         <li>Ask more info</li>');
+    html.push('         <li>Alert</li>');
+    html.push('     </ul>');
+    html.push('</div>');
     return html.join("\n");
 }
 
@@ -241,4 +308,6 @@ fiveD.invest.initDraggableEvent = function () {
 
 $(document).ready(function () {
     fiveD.invest.init();
+    fiveD.invest.getContentData();
+    fiveD.invest.followListDataInit();
 })
