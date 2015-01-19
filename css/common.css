@@ -745,7 +745,7 @@ input:-moz-placeholder {  font-style: italic; }
 
 #investigationContent
 {
-    width:850px;height:715px;
+    width:1145px;height:715px;
     position:relative;
 }
 
@@ -760,6 +760,7 @@ input:-moz-placeholder {  font-style: italic; }
     left:30px;
     border:solid 1px #D1D1D1;
     background-color: #ffffff;
+    z-index:9999;
 }
 
 #investigationContent .personDataMainLayout .followItem
@@ -824,7 +825,7 @@ input:-moz-placeholder {  font-style: italic; }
     cursor:pointer;
 }
 
-#investigationContent .personDataMainLayout .minIcon
+.minIcon
 {
     background-image: url("../img/userEntityMinIcon.png");
     background-repeat:no-repeat;
@@ -835,7 +836,7 @@ input:-moz-placeholder {  font-style: italic; }
     margin:15px 10px 0 0;
 }
 
-#investigationContent .personDataMainLayout .sepIcon
+.sepIcon
 {
     background-image: url("../img/userEntityCloseMinSep.png");
     background-repeat:no-repeat;
@@ -845,7 +846,7 @@ input:-moz-placeholder {  font-style: italic; }
     margin:8px 0 0;
 }
 
-#investigationContent .personDataMainLayout .closeIcon
+.closeIcon
 {
     background-image: url("../img/userEntityCloseIcon.png");
     background-repeat:no-repeat;
@@ -945,12 +946,41 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .topRightToolBar{
-    float:right;
-    display: inline-block;
+    position:absolute;
+    top:0px;
+    right:5px;
+
 }
 
 #GISSection{
-    background-image: url("../img/4.jpg");
+    background-image: url("../img/gis_1.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 532px 412px;
+    width: 532px;
+    height: 412px;
+}
+
+.GISSection_2{
+    background-image: url("../img/gis_2.png")!important;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 532px 412px;
+    width: 532px;
+    height: 412px;
+}
+
+.GISSection_3{
+    background-image: url("../img/gis_3.png")!important;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 532px 412px;
+    width: 532px;
+    height: 412px;
+}
+
+.GISSectionNight{
+    background-image: url("../img/GISNight.png")!important;
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 532px 412px;
@@ -959,7 +989,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .personDataMainLayout .top-nav-GIS{
-    margin: 0px 0px 0px 230px;
+    height:35px;
 }
 
 .personDataMainLayout .top-nav-RiskFactors{
@@ -968,10 +998,13 @@ input:-moz-placeholder {  font-style: italic; }
 
 .personDataMainLayout .top-nav-LINKS{
     margin: 0px 0px 0px 130px;
+    height:30px;
 }
 
 .personDataMainLayout .top-nav ul{
-    margin:6px 0px 0px 0px;
+    position: absolute;
+    right: 55px;
+    top: -5px;
 }
 
 .personDataMainLayout .top-nav li{
@@ -1014,9 +1047,17 @@ input:-moz-placeholder {  font-style: italic; }
     margin :0px 0px 0px -40px;
 }
 
-
 #linksSection{
-    background-image: url("../img/4.jpg");
+    background-image: url("../img/Link.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 532px 412px;
+    width: 532px;
+    height: 412px;
+}
+
+.links_2{
+    background-image: url("../img/Link2.png")!important;
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 532px 412px;
@@ -1032,5 +1073,87 @@ input:-moz-placeholder {  font-style: italic; }
     margin:25px 0px 0px 0px
 }
 
+.timeLine_1
+{
+    background-image: url("../img/timeLine_1.jpg");
+    background-repeat: no-repeat;
+    background-size:686px 63px;
+    width:686px;
+    height:63px;
+    cursor:pointer;
+}
 
+.timeLine_2
+{
+    background-image: url("../img/timeLine_2.png");
+    background-repeat: no-repeat;
+    background-size:686px 63px;
+    width:686px;
+    height:63px;
+    position:relative;
+    cursor:pointer;
+}
+
+.timeLine_3
+{
+    background-image: url("../img/timeLine_3.jpg");
+    background-repeat: no-repeat;
+    background-size:686px 63px;
+    width:686px;
+    height:63px;
+    cursor:pointer;
+}
+
+.showMSGBox
+{
+    border:solid 1px #000000;
+    width: 270px;
+    height: 350px;
+    background-image:url("../img/TextMessages.png");
+    position: absolute;
+    top: 52px;
+    right: 36px;
+    display:none;
+    z-index:10000;
+}
+
+#rangeDateTime
+{
+    position: relative;
+    top: 6px;
+    left: 5px;
+    width:230px;
+}
+
+#rangeDateTime input[type="text"]
+{
+    width:66px;
+}
+
+.btnDateRangeDone
+{
+    border:solid 1px gray;
+    border-radius:3px;
+    width:30px;
+    text-align:center;
+    position:absolute;
+    top: 4px;
+    left: 190px;
+    cursor:pointer;
+}
+
+#riskFactores
+{
+    background-image: url("../img/timeLine_3.jpg");
+    background-repeat: no-repeat;
+    background-size:686px 63px;
+    width:686px;
+    height:63px;
+    cursor:pointer;
+}
+
+#gisCase
+{
+    height:125px;
+}
 /* ===== INVESTIGATION END ====== */
