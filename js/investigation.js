@@ -151,7 +151,7 @@ fiveD.invest.renderGISCaseItems = function () {
     var data = this.dataObj.gisCase["1"];
     html = [];
     html.push('<div class="followItem cloneFollowItem" type="gisCase" entityId="' + data.id + '">');
-    html.push(' <div class="follow-list-circle"></div>');
+    html.push(' <div class="follow-list-circle '+this.peopleListCircleType[data.type]+'">'+data.rank+'</div>');
     html.push(' <div class="followItem-description">');
     html.push('  <div class="followItem-name">' + data.name + '</div>');
     html.push('  <div class="followItem-id">' + data.id + '</div>');
@@ -194,7 +194,7 @@ fiveD.invest.renderGisCase = function (ui, container, entityId) {
         x = $(container).get(0).offsetTop;
         y = $(container).get(0).offsetLeft;
     }
-    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" entityType="gisCase" entityId="' + data[entityId].id + '" ondblclick="fiveD.invest.extendEntity(this)">');
+	html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" entityType="gisCase" entityId="' + data[entityId].id + '" ondblclick="fiveD.invest.extendEntity(this)">');
     html.push(' <div class="' + this.peopleListCircleType[data[entityId].type] + ' follow-list-circle">' + data[entityId].rank + '</div>');
     html.push(' <div class="followItem-description">');
     html.push('  <div class="followItem-name">' + data[entityId].name + '</div>');
@@ -480,10 +480,20 @@ fiveD.invest.renderPersonLinksContent = function (taskId) {
     return html.join("\n");
 }
 
+/*Police report (15.08.2015 20:31): 
+Domestic complaint regarding noise and suspicious persons, Arabic-speaking, in the usually empty apartment – 23B. */
+
 fiveD.invest.renderPersonDataContent = function (taskId) {
     var html = [];
-    html.push('<div id="dataSection">DATA');
-    html.push(' </div>');
+    
+    html.push('<div id="dataSection">Police report (15.08.2015 20:31):<br /> Domestic complaint regarding noise and suspicious persons, Arabic-speaking, in the usually empty apartment &#45; 23B.</div>');
+    html.push('<div class="bottom-nav">');
+    html.push('     <ul class="clearAfter">');
+    html.push('         <li>Follow</li>');
+    html.push('         <li>Ask more info</li>');
+    html.push('         <li>Alert</li>');
+    html.push('     </ul>');
+    html.push('</div>');
     return html.join("\n");
 }
 

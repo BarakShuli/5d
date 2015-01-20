@@ -1156,4 +1156,9 @@ input:-moz-placeholder {  font-style: italic; }
 {
     height:125px;
 }
+
+#dataSection{
+	margin: 30px 10px 0 15px;
+	font-size: 14px;
+}
 /* ===== INVESTIGATION END ====== */
