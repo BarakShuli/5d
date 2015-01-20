@@ -235,10 +235,12 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName, obj) {
         taskId = $(obj).attr("entityId");
     }
 
-    if (funcName !== false) {
-        invokfunction = funcName;
+    if(funcName !== false){
+		invokfunction = funcName;
+	}
+	if (funcName !== false && obj === false) {
         html.push('<div class="personDataMainLayout ' + invokfunction + '" entityId="' + taskId + '">');
-    }else if (funcName === false && obj !== false){
+    }else if ((funcName === false && obj !== false) || (funcName !== false && obj !== false)){
         x = $(obj).get(0).offsetTop;
         y = $(obj).get(0).offsetLeft;
         style = "position:absolute;left:" + y + "px;top:" + x + "px";
@@ -396,8 +398,9 @@ fiveD.invest.renderPersonIDContent = function (entityId) {
     return html.join("\n");
 }
 
-fiveD.invest.renderBuildingEntity = function () {
-    this.renderPersonDataMainLayout("renderPersonDataContent", false);
+fiveD.invest.renderBuildingEntity = function (obj) {
+    var obj = $(obj).closest(".personDataMainLayout");
+	this.renderPersonDataMainLayout("renderPersonDataContent", obj);
 }
 
 fiveD.invest.setSelectedGisTab = function (selectedItem) {
@@ -420,7 +423,7 @@ fiveD.invest.renderPersonGISContent = function (taskId) {
     html.push('     </ul>');
     html.push('     <div id="rangeDateTime"><label for="from">From</label>&nbsp;<input type="text" id="txtFrom" name="txtFrom">&nbsp;<label for="txtTo">to</label>&nbsp;<input type="text" id="txtTo" name="txtTo"><div class="btnDateRangeDone" onclick="fiveD.invest.setSecondSelectedGisTab()">Done</div></div>');
     html.push('</div>');
-    html.push('<div id="GISSection" ondblclick="fiveD.invest.renderBuildingEntity()">');
+    html.push('<div id="GISSection" ondblclick="fiveD.invest.renderBuildingEntity(this)">');
     html.push('</div>');
     html.push('<div class="bottom-nav">');
     html.push('     <ul class="clearAfter">');
