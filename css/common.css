@@ -979,8 +979,8 @@ input:-moz-placeholder {  font-style: italic; }
     height: 412px;
 }
 
-.GISSectionNight{
-    background-image: url("../img/GISNight.png")!important;
+.GISSection_4{
+    background-image: url("../img/4.jpg")!important;
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 532px 412px;
@@ -1159,6 +1159,7 @@ input:-moz-placeholder {  font-style: italic; }
 
 #dataSection{
 	margin: 30px 10px 0 15px;
-	font-size: 14px;
+	font-size: 16px;
+	width: 352px;
 }
 /* ===== INVESTIGATION END ====== */

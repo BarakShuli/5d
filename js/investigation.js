@@ -55,7 +55,7 @@ fiveD.invest = {
             }
         });
 
-
+		console.log("3");
         $("#txtFrom").datepicker({
             defaultDate: "+1w",
             changeMonth: true,
@@ -109,6 +109,25 @@ fiveD.invest.initEntityDataTabsEvent = function () {
         $(this).closest(".mainLayoutTabs").find(".selected").removeClass("selected");
         $(this).addClass("selected");
         $(this).closest(".personDataMainLayout").find(".rightSide .rightSideContent").html(fiveD.invest[functionName](entityId));
+		if(functionName === "renderPersonGISContent"){
+			
+			$(this).closest(".personDataMainLayout").find("#txtFrom").datepicker({
+				defaultDate: "+1w",
+				changeMonth: true,
+				numberOfMonths: 1,
+				onClose: function (selectedDate) {
+					$(this).closest(".personDataMainLayout").find("#txtTo").datepicker("option", "minDate", selectedDate);
+				}
+			});
+			$(this).closest(".personDataMainLayout").find("#txtTo").datepicker({
+				defaultDate: "+1w",
+				changeMonth: true,
+				numberOfMonths: 1,
+				onClose: function (selectedDate) {
+					$(this).closest(".personDataMainLayout").find("#txtFrom").datepicker("option", "maxDate", selectedDate);
+				}
+			});
+		}
     });
 }
 
@@ -204,6 +223,7 @@ fiveD.invest.renderGisCase = function (ui, container, entityId) {
     html.push('  <img class="maskImage" src="img/masking_for_faces_icon.png"/>');
     html.push('</div>');
     $("#investigationContent").append(html.join("\n"));
+	
 }
 
 fiveD.invest.changeTimeLineUI = function (obj) {
@@ -234,7 +254,6 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName, obj) {
     } else {
         taskId = $(obj).attr("entityId");
     }
-
     if(funcName !== false){
 		invokfunction = funcName;
 	}
@@ -250,13 +269,11 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName, obj) {
     }
     
     this.getContentData();
-    if (obj !== false) {
+    if (obj !== false && funcName === "renderPersonGISContent") {
         personData = this.dataObj["gisCase"]["1"];
     } else {
         personData = this.dataObj["peopleList"][0][parseInt(taskId)];
     }
-    
-
     html.push('    <section class="LeftSide">');
     html.push('        <div class="followItem">');
     html.push('            <div class="' + this.peopleListCircleType[personData.type] + ' follow-list-circle"' + '>' + personData.rank + '</div>');
@@ -296,6 +313,23 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName, obj) {
         containment: $("#investigationContent"),
         cursor: "move"
     })
+	console.log("1");
+	$(".personDataMainLayout").find("#txtFrom").datepicker({
+		defaultDate: "+1w",
+		changeMonth: true,
+		numberOfMonths: 1,
+		onClose: function (selectedDate) {
+			$(".personDataMainLayout").find("#txtTo").datepicker("option", "minDate", selectedDate);
+		}
+	});
+	$(".personDataMainLayout").find("#txtTo").datepicker({
+		defaultDate: "+1w",
+		changeMonth: true,
+		numberOfMonths: 1,
+		onClose: function (selectedDate) {
+			$(".personDataMainLayout").find("#txtFrom").datepicker("option", "maxDate", selectedDate);
+		}
+	});
 }
 
 fiveD.invest.closeTimeLineWindow = function (obj) {
@@ -325,6 +359,23 @@ fiveD.invest.extendEntity = function (obj) {
     var container = $(obj).closest(".followItem");
     if ($(obj).attr("entityType") === "gisCase") {
         this.renderPersonDataMainLayout("renderPersonGISContent", container);
+		console.log("5");
+		$("#txtFrom").datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            onClose: function (selectedDate) {
+                $("#txtTo").datepicker("option", "minDate", selectedDate);
+            }
+        });
+        $("#txtTo").datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            onClose: function (selectedDate) {
+                $("#txtFrom").datepicker("option", "maxDate", selectedDate);
+            }
+        });
     } else {
         this.renderPersonDataMainLayout(false, container);
     }
@@ -406,7 +457,7 @@ fiveD.invest.renderBuildingEntity = function (obj) {
 fiveD.invest.setSelectedGisTab = function (selectedItem) {
     $(".gisTabs li").removeClass("selected");
     $(selectedItem).addClass("selected");
-    $("#GISSection").addClass("GISSectionNight");
+    $("#GISSection").addClass("GISSection_4");
 }
 
 fiveD.invest.setSecondSelectedGisTab = function () {
@@ -479,9 +530,6 @@ fiveD.invest.renderPersonLinksContent = function (taskId) {
     html.push('</div>');
     return html.join("\n");
 }
-
-/*Police report (15.08.2015 20:31): 
-Domestic complaint regarding noise and suspicious persons, Arabic-speaking, in the usually empty apartment – 23B. */
 
 fiveD.invest.renderPersonDataContent = function (taskId) {
     var html = [];
