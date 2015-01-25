@@ -161,7 +161,7 @@ input:-moz-placeholder {  font-style: italic; }
 
 #notificationSection
 {
-    
+    margin:28px 0 0 0;
 }
 
 .longLine
@@ -241,7 +241,7 @@ input:-moz-placeholder {  font-style: italic; }
 
 #taskSection
 {
-    margin:28px 0 0 0;
+    
 }
 
 #taskSection header
@@ -423,8 +423,10 @@ input:-moz-placeholder {  font-style: italic; }
     width: 124px;
     height: 111px;
     position: absolute;
-    top: 0px;
+    top: 10px;
     z-index: 100;
+    zoom: 67%;
+    left: 26px;
 }
 
 .followItem .maskImage{
@@ -745,7 +747,8 @@ input:-moz-placeholder {  font-style: italic; }
 
 #investigationContent
 {
-    width:1145px;height:715px;
+    width: 1164px;
+    height: 748px;
     position:relative;
 }
 
@@ -778,7 +781,6 @@ input:-moz-placeholder {  font-style: italic; }
     width: -moz-max-content;
     width: -webkit-max-content;
     width: max-content;
-
     border-right:solid 1px #E9E9E9;
     float:left;
 }
@@ -828,12 +830,13 @@ input:-moz-placeholder {  font-style: italic; }
 .minIcon
 {
     background-image: url("../img/userEntityMinIcon.png");
-    background-repeat:no-repeat;
-    width:11px;
-    height:11px;
-    float:right;
-    cursor:pointer;
-    margin:15px 10px 0 0;
+    background-repeat: no-repeat;
+    width: 11px;
+    height: 17px;
+    float: right;
+    cursor: pointer;
+    margin: 7px 10px 0 0;
+    background-position: 0px 8px;
 }
 
 .sepIcon
@@ -1161,5 +1164,11 @@ input:-moz-placeholder {  font-style: italic; }
 	margin: 30px 10px 0 15px;
 	font-size: 16px;
 	width: 352px;
+}
+
+.riskFactoreImage
+{
+    zoom: 68%;
+    height: 714px;
 }
 /* ===== INVESTIGATION END ====== */

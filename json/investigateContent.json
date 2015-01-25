@@ -2,110 +2,107 @@
     "peopleList": [
         {
             "1": {
-                "id": "1",
+                "id": "23423423",
                 "type": "red",
-                "name": "barak shuli",
-                "age": "30",
-                "gender": "female",
-                "dateOfBirth": "27/10/1984",
-                "countryOfBirth": "eeeeeeeee",
-                "maritalStatus": "rrrrrrrr",
+                "name": "Samir Abu-Musa Halil",
+                "age": "33",
+				"data" : "wwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+                "gender": "male",
+                "dateOfBirth": "25/02/1982",
+                "countryOfBirth": "Belgium",
+                "maritalStatus": "single",
                 "nationalities": [
-                    "dddddd",
-                    "gggggg"
+                    "Belgian (EU)"
                 ],
-                "riskFactorsImg": "img/Adrian.png",
-                "residence": "dddddddd",
-                "alliffication": [
-                    "11111",
-                    "22222",
-                    "33333"
+                "riskFactorsImg": "img/samirrisk.png",
+                "residence": "Herderinstraat 26, Antwerp, Belgium",
+                "affiliation": [
+                    "Antwerp  Weapons & Drugs organization",
+                    "Shams El-Fajr mosque"
                 ],
-                "rolePosition": "sdfsdf",
-                "image": "sanda.jpg",
-                "rank": "55"
+                "rolePosition": "Ex-drug trafficker, Active participant at mosque",
+                "image": "samir.jpg",
+                "rank": "81"
             },
             "2": {
                 "id": "2",
                 "type": "orange",
-                "name": "Ariel Zamir",
-                "age": "37",
-                "gender": "female",
-                "dateOfBirth": "12/11/1980",
-                "countryOfBirth": "eeeeeeeee",
-                "maritalStatus": "rrrrrrrr",
+                "name": "Adrian Janssen",
+                "age": "36",
+				"data" : "qqqqqqqqqqqqqqqqqqqqqqqq",
+                "gender": "male",
+                "dateOfBirth": "28/07/1979",
+                "countryOfBirth": "Belgium",
+                "maritalStatus": "single",
                 "nationalities": [
-                    "dddddd",
-                    "gggggg"
+                    "Belgian (EU)"
                 ],
-                "riskFactorsImg": "img/Samir.png",
-                "residence": "dddddddd",
-                "alliffication": [
-                    "11111",
-                    "22222",
-                    "33333"
+                "riskFactorsImg": "img/adrianrisk.png",
+                "residence": "12 Spoorstraat, Antwerpen, Antwerp, Belgium",
+                "affiliation": [
+                    "Suspected IS",
+                    "Shams El-Fajr mosque"
                 ],
-                "rolePosition": "sdfsdf",
-                "image": "sanda.jpg",
-                "rank": "50"
+                "rolePosition": "Active participant  at mosque",
+                "image": "adrian.jpg",
+                "rank": "73"
             },
             "3": {
                 "id": "3",
-                "type": "red",
-                "name": "ilia pog",
-                "age": "27",
-                "gender": "female",
-                "dateOfBirth": "7/6/1975",
-                "countryOfBirth": "eeeeeeeee",
-                "maritalStatus": "rrrrrrrr",
+                "type": "blue",
+                "name": "Omar Fares",
+                "age": "24",
+				"data" : "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                "gender": "male",
+                "dateOfBirth": "15/03/1991",
+                "countryOfBirth": "Belgium",
+                "maritalStatus": "single",
                 "nationalities": [
-                    "dddddd",
-                    "gggggg"
+                    "Belgian (EU)",
+                    "Algerian"
                 ],
                 "riskFactorsImg": "",
-                "residence": "dddddddd",
-                "alliffication": [
-                    "11111",
-                    "22222",
-                    "33333"
+                "residence": "Nijverheidstraat 3, Antwerpen, Belgium",
+                "affiliation": [
+                    "Shams El-Fajr mosque"
                 ],
-                "rolePosition": "sdfsdf",
-                "image": "sanda.jpg",
-                "rank": "45"
+                "rolePosition": "Active participant  at mosque",
+                "image": "omar.jpg",
+                "rank": "32"
             },
             "4": {
                 "id": "4",
                 "type": "blue",
-                "name": "Moshe Dadon",
-                "age": "45",
-                "gender": "female",
-                "dateOfBirth": "26/1/1964",
-                "countryOfBirth": "eeeeeeeee",
-                "maritalStatus": "rrrrrrrr",
+                "name": "Ahmed Jafari",
+                "age": "27",
+				"data" : "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "gender": "male",
+                "dateOfBirth": "20/11/1988",
+                "countryOfBirth": "Belgium",
+                "maritalStatus": "single",
                 "nationalities": [
-                    "dddddd",
-                    "gggggg"
+                    "Belgian (EU)",
+                    "Algerian"
                 ],
                 "riskFactorsImg": "",
-                "residence": "dddddddd",
-                "alliffication": [
-                    "11111",
-                    "22222",
-                    "33333"
+                "residence": "Geelhandplaats 13, Antwerpen, Belgium",
+                "affiliation": [
+                    "Shams El-Fajr mosque"
                 ],
-                "rolePosition": "sdfsdf",
-                "image": "sanda.jpg",
-                "rank": "13"
+                "rolePosition": "Active participant  at mosque",
+                "image": "ahmed.jpg",
+                "rank": "24"
             }
         }
     ],
     "gisCase": {
         "1": {
-            "id": "4",
+            "id": "353453455",
             "type": "blue",
-            "name": "222 4444",
+            "name": "Case GIS",
             "age": "45",
-            "gender": "female",
+			"data" : "jjjjjjjjjjjjjjjjjjjjjjjjj",
+            "gender": "male",
             "dateOfBirth": "26/1/1964",
             "countryOfBirth": "eeeeeeeee",
             "maritalStatus": "rrrrrrrr",
@@ -115,14 +112,40 @@
             ],
             "riskFactorsImg": "",
             "residence": "dddddddd",
-            "alliffication": [
+            "affiliation": [
                 "11111",
                 "22222",
                 "33333"
             ],
             "rolePosition": "sdfsdf",
-            "image": "sanda.jpg",
-            "rank": "13"
+            "image": "casegis.jpg",
+            "rank": "0"
         }
-    }
+    },
+    "building": [{
+         
+            "id": "066643602",
+            "type": "blue",
+            "name": "building Entity",
+            "age": "22",
+			"data" : "Police report (15.08.2015 20:31):<br /> Domestic complaint regarding noise and suspicious persons, Arabic-speaking, in the usually empty apartment &#45; 23B.",
+            "gender": "male",
+            "dateOfBirth": "21/31/1564",
+            "countryOfBirth": "zxzxzx",
+            "maritalStatus": "eeee121",
+            "nationalities": [
+                "dddddd_1",
+                "gggggg_2"
+            ],
+            "riskFactorsImg": "",
+            "residence": "wwww",
+            "affiliation": [
+                "000",
+                "555",
+                "777"
+            ],
+            "rolePosition": "zxzxzxzxzzx",
+            "image": "casegis.jpg",
+            "rank": "0"
+    }]
 }

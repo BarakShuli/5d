@@ -1,51 +1,51 @@
 {
     "openCase" : [
         {
-            "id"    : "1234567",
-            "type"  : "orange",
-            "name"  : "111 111",
-            "rank"  : "90",
-            "reporter" : "somebody1",
-            "owner" : "somebody1",
+            "id"    : "442586",
+            "type"  : "red",
+            "name"  : "Brabant Wallon Killers reappear",
+            "rank"  : "72",
+            "reporter" : "Chris Janssens",
+            "owner" : "Chris Janssens",
             "status": "Ongoing",
-            "tasks"  :"1",
-            "people" : ["777777","","","","","",""]
+            "tasks"  :"5",
+            "people" : ["Kapllan Murat","","","","","",""]
 
         },
         {
-            "id": "1111111",
-            "type" : "blue",
-            "name": "333 333",
-            "rank": "13",
-            "reporter" : "somebody2",
-            "owner" : "somebody2",
+            "id": "255688",
+            "type" : "orange",
+            "name": "Potential terror attack in Ghent",
+            "rank": "57",
+            "reporter" : "Amedy Coulibaly",
+            "owner" : "Tom Van Grieken",
             "status": "Ongoing",
-            "tasks"  :"2",
-            "people" : ["111111","",""]
+            "tasks"  :"12",
+            "people" : ["Jean De Boe","",""]
 
         },
         {
-            "id": "1111111",
-            "type" : "red",
-            "name": "999 999",
-            "rank": "12",
-            "reporter" : "somebody3",
-            "owner" : "somebody3",
+            "id": "222235",
+            "type" : "orange",
+            "name": "Scarface gang activity in Antwerp port",
+            "rank": "45",
+            "reporter" : "Michael Torfs",
+            "owner" : "Michael Torfs",
             "status": "Ongoing",
             "tasks"  :"3",
-            "people" : ["22222","",""]
+            "people" : ["Abu Omar al-Saif","",""]
 
         },
         {
-            "id": "1111111",
-            "type" : "orange",
-            "name": "777 777",
-            "rank": "11",
-            "reporter" : "somebody4",
-            "owner" : "somebody4",
+            "id": "658444",
+            "type" : "blue",
+            "name": "Former Haemers gang during 2014",
+            "rank": "42",
+            "reporter" : "Tom Van Grieken",
+            "owner" : "Amedy Coulibaly",
             "status": "Ongoing",
-            "tasks"  :"4",
-            "people" : ["333333","","","","","","","","","",""]
+            "tasks"  :"11",
+            "people" : ["Jean De Boe","","","","","","","","","",""]
 
         }
     ],
@@ -55,116 +55,116 @@
         {
             "type": "info",
             "title": "3 minutes ago",
-            "description": "some text some text some text some text some text some text some text some text some text"
-        },
-        {
-            "type": "info",
-            "title": "10:16 AM",
-            "description": "some text some text some text some text some text some text some text some text some text "
+            "description": "Johan Bonny added a comment to Former Haemers gang during 2014"
         },
         {
             "type": "warning",
+            "title": "10:16 AM",
+            "description": "Rik Torfs changed the Risk Factor of Andre Soudy"
+        },
+        {
+            "type": "info",
             "title": "Yesterday, 4:29 PM",
-            "description": "some text some text some text some text some text some text some text some text some text "
+            "description": "Marie Gillain added a comment to Daens Schoenaerts links"
         }
     ],
     "followList": [
         {
-            "id": "1111111",
+            "id": "1586427",
             "type" : "red",
-            "name": "111 111",
-            "image": "sanda.jpg",
-            "rank": "90"
+            "name": "Denise Tyack",
+            "image": "denise.jpg",
+            "rank": "73"
         },
         {
-            "id": "22222222",
-            "type" : "blue",
-            "name": "222 222",
-            "image": "sanda.jpg",
-            "rank": "50"
-        },
-        {
-            "id": "3333333",
-            "type" : "red",
-            "name": "333 333",
-            "image": "sanda.jpg",
-            "rank": "9"
-        },
-        {
-            "id": "4444444",
+            "id": "4528675",
             "type" : "orange",
-            "name": "444 444",
-            "image": "sanda.jpg",
-            "rank": "34"
+            "name": "Kapllan Murat",
+            "image": "kapllan.jpg",
+            "rank": "62"
         },
         {
-            "id": "5555555",
-            "type" : "red",
-            "name": "555 555",
-            "image": "sanda.jpg",
-            "rank": "67"
-        },
-        {
-            "id": "6666666",
-            "type" : "blue",
-            "name": "666 666",
-            "image": "sanda.jpg",
-            "rank": "12"
-        },
-        {
-            "id": "77777",
-            "type" : "blue",
-            "name": "777 777",
-            "image": "sanda.jpg",
-            "rank": "87"
-        },
-        {
-            "id": "888888",
+            "id": "3115277",
             "type" : "orange",
-            "name": "888 888",
-            "image": "sanda.jpg",
-            "rank": "34"
+            "name": "Andre Soudy",
+            "image": "andre.jpg",
+            "rank": "61"
         },
         {
-            "id": "99999",
-            "type" : "red",
-            "name": "999 999",
-            "image": "sanda.jpg",
-            "rank": "41"
+            "id": "3665284",
+            "type" : "orange",
+            "name": "Abu Omar al-Saif",
+            "image": "abu.jpg",
+            "rank": "59"
+        },
+        {
+            "id": "1112457",
+            "type" : "orange",
+            "name": "Jean De Boe",
+            "image": "jean.jpg",
+            "rank": "59"
+        },
+        {
+            "id": "6695822",
+            "type" : "orange",
+            "name": "Kamel Rabat Bouralha",
+            "image": "kamel.jpg",
+            "rank": "58"
+        },
+        {
+            "id": "5244485",
+            "type" : "blue",
+            "name": "Fabrice Du Welz",
+            "image": "fabrice.jpg",
+            "rank": "42"
+        },
+        {
+            "id": "1125565",
+            "type" : "blue",
+            "name": "Jeremie Renier",
+            "image": "jeremie.jpg",
+            "rank": "40"
+        },
+        {
+            "id": "1244581",
+            "type" : "blue",
+            "name": "Marie Gillain",
+            "image": "marie.jpg",
+            "rank": "38"
         }
     ],
 
     "task" : [
         {
-            "type" : "gray",
-            "description" : "some text some text some text",
+            "type" : "orange",
+            "description" : "Samir Abu-Musa Halil 86: Suspected terror activity in Brussels",
             "taskId" : "1"
 
         },
         {
-            "type" : "gray",
-            "description" : "some text some text some text",
+            "type" : "orange",
+            "description" : "Abu Omar al-Saif 80: Alarming location",
             "taskId" : "2"
         },
         {
-            "type" : "orange",
-            "description" : "some text some text some text",
+            "type" : "green",
+            "description" : "Kamel Rabat Bouralha 78: link pattern",
             "taskId" : "3"
         },
         {
-            "type" : "green",
-            "description" : "some text some text some text",
+            "type" : "gray",
+            "description" : "Jean De Boe 78: Several alarming activities",
             "taskId" : "4"
 
         },
         {
-            "type" : "green",
-            "description" : "some text some text some text",
+            "type" : "gray",
+            "description" : "Investigate the Scarface gang",
             "taskId" : "5"
         },
         {
-            "type" : "orange",
-            "description" : "some text some text some text",
+            "type" : "gray",
+            "description" : "Andre Soudy 50: Manage collection",
             "taskId" : "6"
         }
     ]
