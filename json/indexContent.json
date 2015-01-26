@@ -27,7 +27,7 @@
         {
             "id": "222235",
             "type" : "orange",
-            "name": "Scarface gang activity in Antwerp port",
+            "name": "",
             "rank": "45",
             "reporter" : "Michael Torfs",
             "owner" : "Michael Torfs",
@@ -137,33 +137,39 @@
     "task" : [
         {
             "type" : "orange",
+			"title" : "Samir Abu-Musa Halil",
             "description" : "Samir Abu-Musa Halil 86: Suspected terror activity in Brussels",
             "taskId" : "1"
 
         },
         {
             "type" : "orange",
+			"title" : "Abu Omar al-Saif",
             "description" : "Abu Omar al-Saif 80: Alarming location",
             "taskId" : "2"
         },
         {
             "type" : "green",
+			"title" : "Kamel Rabat Bouralha",
             "description" : "Kamel Rabat Bouralha 78: link pattern",
             "taskId" : "3"
         },
         {
             "type" : "gray",
+			"title" : "Jean De Boe 78",
             "description" : "Jean De Boe 78: Several alarming activities",
             "taskId" : "4"
 
         },
         {
             "type" : "gray",
+			"title" : "Investigate",
             "description" : "Investigate the Scarface gang",
             "taskId" : "5"
         },
         {
             "type" : "gray",
+			"title" : "Andre Soudy",
             "description" : "Andre Soudy 50: Manage collection",
             "taskId" : "6"
         }

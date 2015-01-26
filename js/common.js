@@ -22,7 +22,11 @@ fiveD = {
     init: function () {
 		$("#accordion").accordion({
             heightStyle: "fill"
-        });
+		});
+
+		$("#tasksAccordion").accordion({
+		    heightStyle: "content"
+		});
 
         $(".updateTab").click(function () {
             $(".updatetabsList .selectedTab").removeClass("selectedTab");
@@ -36,8 +40,8 @@ fiveD = {
 
 
 
-        $(".taskContainer").click(function () {
-            var taskId = $(this).attr("taskId");
+        $(".taskDescription").click(function () {
+            var taskId = $(this).prev().attr("taskId");
             localStorage.setItem("taksId", taskId);
             window.location = "investigation.html";
         });
@@ -56,7 +60,8 @@ fiveD = {
         var self = this, data = self.dataObj.task;
         $(".taskItem .taskContainer").each(function(index){
             $(this).find(".taskItemBullet").addClass(self.taskBulletTypeObj[data[index].type]);
-            $(this).find(".taskItemContent").html(data[index].description);
+            $(this).find(".taskItemContent").html(data[index].title);
+            $(this).next().html(data[index].description);
             $(this).attr("taskId", data[index].taskId);
 
         });

@@ -244,6 +244,11 @@ input:-moz-placeholder {  font-style: italic; }
     
 }
 
+#taskSection .taskDescription
+{
+    cursor:pointer;
+}
+
 #taskSection header
 {
     background-image: url("../img/taskTitle.png");
@@ -253,14 +258,14 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .taskContainer{
-    width:192px;
+    width:170px;
     min-height: 20px;
     display: block;
     margin: 10px 0px 0px -5px;
 }
 
 .taskItem {
-    margin: 15px 0 0 7px;
+    margin: 15px 0 0 0;
 }
 
 .taskItem .grayBullet {
@@ -282,20 +287,21 @@ input:-moz-placeholder {  font-style: italic; }
 .taskItem .taskItemBullet{
     width:20px;
     height:20px;
-    display: inline-block;
     float:left;
+    position: relative;
+    top: 10px;
+    left: -22px;
 }
-
-
 
 .taskItemContent {
     font-size: 14px;
     color: #757575;
-    float: left;
     width: 167px;
     cursor: pointer;
     min-height: 20px;
-    margin: 0px 0px 0px 5px;
+    position: relative;
+    right: 15px;
+
 }
 
 #rightSection
@@ -448,6 +454,12 @@ input:-moz-placeholder {  font-style: italic; }
 
 .ui-accordion .ui-accordion-content{
     padding: 1em 1.2em;
+}
+
+#tasksAccordion .ui-accordion-content{
+    background-image: url("../img/Open_cases_Gradient-08.png");
+    background-position: -57px;
+    width:168px;
 }
 
 .ui-accordion-content{
@@ -1163,12 +1175,17 @@ input:-moz-placeholder {  font-style: italic; }
 #dataSection{
 	margin: 30px 10px 0 15px;
 	font-size: 16px;
-	width: 352px;
+	width: 250px;
 }
 
 .riskFactoreImage
 {
     zoom: 68%;
     height: 714px;
+}
+
+#btnResetTimeLine
+{
+    width:100px;height:50px;position:absolute;right:-100px;cursor:pointer;
 }
 /* ===== INVESTIGATION END ====== */

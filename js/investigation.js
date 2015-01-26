@@ -272,7 +272,7 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName, obj, isBuildingEnt
     this.getContentData();
     if (obj !== false && funcName === "renderPersonGISContent") {
         personData = this.dataObj["gisCase"]["1"];
-    }else if (isBuildingEntity) {
+    }else if (isBuildingEntity == true || isBuildingEntity == "true") {
         personData = this.dataObj["building"][0];
     } else {
         personData = this.dataObj["peopleList"][0][parseInt(taskId)];
@@ -400,7 +400,7 @@ fiveD.invest.extendEntity = function (obj, isGisCase, isBuilding) {
 fiveD.invest.renderPersonIDContent = function (entityId, isBuilding) {
     var html = [], personData = "";
     personData = this.dataObj["peopleList"][0][parseInt(entityId)];
-    if (isBuilding) {
+    if (isBuilding == true || isBuilding == "true") {
         personData = this.dataObj["building"][0];
     }
     html.push('<div id="idSection">');
@@ -506,10 +506,10 @@ fiveD.invest.renderPersonGISContent = function (taskId, isBuilding) {
 fiveD.invest.renderPersonRiskFactorsContent = function (taskId, isBuilding) {
     var html = [], personData = "";
     personData = this.dataObj["peopleList"][0][parseInt(taskId)];
-    if (isBuilding) {
+    if (isBuilding == true || isBuilding == "true") {
         personData = this.dataObj["building"][0];
     }
-    html.push('<img src="' + personData.riskFactorsImg + '" width="420px" height="483px" class="riskFactoreImage" />');
+    html.push('<img src="' + personData.riskFactorsImg + '" width="412px" height="483px" class="riskFactoreImage" />');
     html.push('<div class="bottom-nav">');
     html.push('     <ul class="clearAfter">');
     html.push('         <li>Follow</li>');
@@ -583,6 +583,11 @@ fiveD.invest.initDraggableEvent = function () {
     });
 }
 
+fiveD.invest.resetTimeline = function () {
+    $("#timeLineElement").removeClass().addClass("timeLine_1");
+    $("#timeLineElement").attr("stepId", "1");
+    this.isTimeLineTextMsgClosed = false;
+}
 
 $(document).ready(function () {
     fiveD.invest.getContentData();
