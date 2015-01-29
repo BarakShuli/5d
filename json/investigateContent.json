@@ -22,7 +22,9 @@
                 ],
                 "rolePosition": "Ex-drug trafficker, Active participant at mosque",
                 "image": "samir.jpg",
-                "rank": "81"
+                "rank": "81",
+				"timeLineImg" : "timeLine_1",
+				"signBG" : "#DD4747"
             },
             "2": {
                 "id": "2",
@@ -45,7 +47,9 @@
                 ],
                 "rolePosition": "Active participant  at mosque",
                 "image": "adrian.jpg",
-                "rank": "73"
+                "rank": "73",
+				"timeLineImg" : "timeLine_2",
+				"signBG" : "#7DBCE3"
             },
             "3": {
                 "id": "3",
@@ -68,7 +72,9 @@
                 ],
                 "rolePosition": "Active participant  at mosque",
                 "image": "omar.jpg",
-                "rank": "32"
+                "rank": "32",
+				"timeLineImg" : "timeLine_2",
+				"signBG" : "#7DBCE3"
             },
             "4": {
                 "id": "4",
@@ -91,7 +97,9 @@
                 ],
                 "rolePosition": "Active participant  at mosque",
                 "image": "ahmed.jpg",
-                "rank": "24"
+                "rank": "24",
+				"timeLineImg" : "timeLine_3",
+				"signBG" : "#FB9506"
             }
         }
     ],

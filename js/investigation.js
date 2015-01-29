@@ -8,6 +8,7 @@ fiveD.invest = {
         orange : "orange-circle",
         blue   : "blue-circle"
     },
+    
 
     init: function () {
         this.renderPeopleItems();
@@ -22,11 +23,13 @@ fiveD.invest = {
             }
         });
         if (localStorage.getItem("taksId") !== undefined) {
+            var taskId = localStorage.getItem("taksId");
             //this.renderPerson();
             this.renderPersonDataMainLayout(false, false, false);
             this.renderPersonDataMainLayout("renderPersonGISContent", false, false);
             this.renderPersonDataMainLayout("renderPersonLinksContent", false, false);
             this.initDraggableEvent();
+            this.setTimelineByEntityId(taskId);
         }
         $(".ui-accordion-header").addClass('').click(function () {
             if ($(this).hasClass('ui-accordion-header-active')) {
@@ -49,9 +52,9 @@ fiveD.invest = {
                 if ($(ui.draggable).attr("type") === "gisCase") {
                     fiveD.invest.renderGisCase(ui, false, $(ui.draggable).attr("entityId"), false);
                 } else {
-                    console.log($(ui.draggable).attr("isBuilding"));
                     fiveD.invest.renderPerson(ui, false, $(ui.draggable).attr("entityId"), false);
                 }
+                fiveD.invest.setTimelineByEntityId($(ui.draggable).attr("entityId"));
                 fiveD.invest.initDraggableEvent();
             }
         });
@@ -80,6 +83,7 @@ fiveD.invest = {
         var self = this, data = self.dataObj.peopleList[0], entityId = -1;
         $("#peopleList .followItem").each(function(index){
             entityId = $(this).attr("entityId");
+
             $(this).find(".follow-list-circle").addClass(self.peopleListCircleType[data[index].type]);
             $(this).find(".follow-list-circle").html(data[index].rank);
             $(this).find(".followItem-description .followItem-name").html(data[index].name);
@@ -101,6 +105,22 @@ fiveD.invest = {
         });
     }
 }
+
+
+fiveD.invest.setTimelineByEntityId = function(entityId){
+    var data = this.dataObj.peopleList[0];
+    $("#timeLineElement").removeClass().addClass(data[entityId].timeLineImg);
+},
+
+fiveD.invest.setTimelineAfterRemove = function (entityId) {
+    var data = this.dataObj.peopleList[0];
+    if (parseInt(entityId) > 1) {
+        entityId = parseInt(entityId) - 1;
+        $("#timeLineElement").removeClass().addClass(data[entityId].timeLineImg);
+    } else if ($(".personDataMainLayout").length === 0) {
+        $("#timeLineElement").removeClass().addClass("timeLine_0");
+    }
+},
 
 fiveD.invest.initEntityDataTabsEvent = function () {
     $(".mainLayoutTabs li").click(function () {
@@ -152,6 +172,7 @@ fiveD.invest.renderPeopleItems = function () {
         if (item < 5) {
             html = [];
             html.push('<div class="followItem cloneFollowItem" entityId="' + item + '">');
+            html.push(' <div class="entityColorSign" style="background-color:' + data[item].signBG + '"></div>');
             html.push(' <div class="follow-list-circle ' + this.peopleListCircleType[data[item].type] + '">' + data[item].rank + '</div>');
             html.push(' <div class="followItem-description">');
             html.push('  <div class="followItem-name">' + data[item].name + '</div>');
@@ -192,7 +213,8 @@ fiveD.invest.renderPerson = function (ui, container, entityId, isBuilding) {
         x = $(container).get(0).offsetTop;
         y = $(container).get(0).offsetLeft;
     }
-    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" entityId="' + entityId + '" ondblclick="fiveD.invest.extendEntity(this, false, ' + isBuilding + ')">');
+    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" entityId="' + entityId + '" ondblclick="fiveD.invest.extendEntity(this, false, ' + isBuilding + ', ' + entityId + ')">');
+    html.push(' <div class="entityColorSign" style="background-color:' + data[entityId].signBG + '"></div>');
     html.push(' <div class="' + this.peopleListCircleType[data[entityId].type] + ' follow-list-circle">' + data[entityId].rank + '</div>');
     html.push(' <div class="followItem-description">');
     html.push('  <div class="followItem-name">' + data[entityId].name + '</div>');
@@ -214,7 +236,7 @@ fiveD.invest.renderGisCase = function (ui, container, entityId) {
         x = $(container).get(0).offsetTop;
         y = $(container).get(0).offsetLeft;
     }
-	html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" entityType="gisCase" entityId="' + entityId + '" ondblclick="fiveD.invest.extendEntity(this, true)">');
+    html.push('<div class="followItem droppedFollowItem" style="position:absolute;left:' + y + 'px;top:' + x + 'px" entityType="gisCase" entityId="' + entityId + '" ondblclick="fiveD.invest.extendEntity(this, true, false,' + entityId + ')">');
 	html.push(' <div class="follow-list-circle ' + this.peopleListCircleType[data.type] + '" style="visibility:hidden">' + data.rank + '</div>');
     html.push(' <div class="followItem-description">');
     html.push('  <div class="followItem-name">' + data[entityId].name + '</div>');
@@ -242,14 +264,17 @@ fiveD.invest.changeTimeLineUI = function (obj) {
             $(obj).attr("stepId", stepId + 1)
             $(obj).removeClass("timeLine_" + (stepId));
             $(obj).addClass("timeLine_" + (stepId + 1));
-        }
-        
-    }
-    
+        }   
+    }   
+}
+
+fiveD.invest.setFocuIn = function (obj) {
+    $(".personDataMainLayout").css("z-index", "1");
+    $(obj).css("z-index", "9999");
 }
 
 fiveD.invest.renderPersonDataMainLayout = function (funcName, obj, isBuildingEntity) {
-    var html = [], invokfunction = "renderPersonIDContent", x = 0, y = 0, style = "", taskId = "", personData = "";
+    var html = [], invokfunction = "renderPersonIDContent", x = 0, y = 0, style = "", taskId = "", personData = "", isGISCaseEntity = "";
     if (obj === false) {
         taskId = localStorage.getItem("taksId");
     } else {
@@ -257,26 +282,31 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName, obj, isBuildingEnt
     }
     if(funcName !== false){
 		invokfunction = funcName;
-	}
+    }
+    if (funcName === "renderPersonGISContentForGISCase") {
+        isGISCaseEntity = "entityType='gisCase'";
+    }
+
 	if (funcName !== false && obj === false) {
-	    html.push('<div class="personDataMainLayout ' + invokfunction + '" entityId="' + taskId + '" isBuilding="' + isBuildingEntity + '">');
+	    html.push('<div id="personDataMainLayout_' + taskId + '" class="personDataMainLayout ' + invokfunction + '" entityId="' + taskId + '" ' + isGISCaseEntity + ' isBuilding="' + isBuildingEntity + '" onclick="fiveD.invest.setFocuIn(this)">');
     }else if ((funcName === false && obj !== false) || (funcName !== false && obj !== false)){
         x = $(obj).get(0).offsetTop;
         y = $(obj).get(0).offsetLeft;
         style = "position:absolute;left:" + y + "px;top:" + x + "px";
-        html.push('<div class="personDataMainLayout" style="' + style + '"" entityId="' + taskId + '" isBuilding="' + isBuildingEntity + '">');
+        html.push('<div class="personDataMainLayout" style="' + style + '"" entityId="' + taskId + '" isBuilding="' + isBuildingEntity + '"' + isGISCaseEntity + ' onclick="fiveD.invest.setFocuIn(this)">');
     }else if (funcName === false &&  obj === false){
-        html.push('<div class="personDataMainLayout ' + invokfunction + '" entityId="' + taskId + '" isBuilding="' + isBuildingEntity + '">');
+        html.push('<div class="personDataMainLayout ' + invokfunction + '" entityId="' + taskId + '" isBuilding="' + isBuildingEntity + '"' + isGISCaseEntity + ' onclick="fiveD.invest.setFocuIn(this)">');
     }
     
     this.getContentData();
-    if (obj !== false && funcName === "renderPersonGISContent") {
+    if (obj !== false && funcName === "renderPersonGISContentForGISCase") {
         personData = this.dataObj["gisCase"]["1"];
     }else if (isBuildingEntity == true || isBuildingEntity == "true") {
         personData = this.dataObj["building"][0];
     } else {
         personData = this.dataObj["peopleList"][0][parseInt(taskId)];
     }
+    html.push(' <div class="entityColorSign" style="background-color:' + personData.signBG + '"></div>');
     html.push('    <section class="LeftSide">');
     html.push('        <div class="followItem">');
     html.push('            <div class="' + this.peopleListCircleType[personData.type] + ' follow-list-circle"' + '>' + personData.rank + '</div>');
@@ -357,8 +387,11 @@ fiveD.invest.minimizeWindow = function (obj) {
 }
 
 fiveD.invest.closeWindow = function (obj) {
-    var container = $(obj).closest(".personDataMainLayout");
+    var container = $(obj).closest(".personDataMainLayout"),
+        entityId = container.attr("entityId");
     container.remove();
+    this.setTimelineAfterRemove(entityId);
+
 }
 
 fiveD.invest.removeEntityItem = function (obj) {
@@ -366,13 +399,12 @@ fiveD.invest.removeEntityItem = function (obj) {
     container.remove();
 }
 
-fiveD.invest.extendEntity = function (obj, isGisCase, isBuilding) {
+fiveD.invest.extendEntity = function (obj, isGisCase, isBuilding, entityId) {
     var container = $(obj).closest(".followItem");
-    console.log("isBuilding-->", isBuilding);
     if ($(obj).attr("entityType") === "gisCase") {
-        this.renderPersonDataMainLayout("renderPersonGISContent", container, isBuilding);
-        $(".personDataMainLayout ").attr("entityType", "gisCase");
-        $(".personDataMainLayout .follow-list-circle").css("visibility", "hidden");
+        this.renderPersonDataMainLayout("renderPersonGISContentForGISCase", container, isBuilding);
+        $("#personDataMainLayout_" + entityId).attr("entityType", "gisCase");
+        $("#personDataMainLayout_" + entityId + " .follow-list-circle").css("visibility", "hidden");
 		$("#txtFrom").datepicker({
             defaultDate: "+1w",
             changeMonth: true,
@@ -466,19 +498,21 @@ fiveD.invest.renderPersonIDContent = function (entityId, isBuilding) {
 }
 
 fiveD.invest.renderBuildingEntity = function (obj) {
-    var obj = $(obj).closest(".personDataMainLayout");
-    this.renderPersonDataMainLayout("renderPersonDataContent", obj, true);
+    var parentObj = $(obj).closest(".personDataMainLayout");
+    this.renderPersonDataMainLayout("renderPersonDataContent", parentObj, true);
     this.initEntityDataTabsEvent();
 }
 
-fiveD.invest.setSelectedGisTab = function (selectedItem) {
-    $(".gisTabs li").removeClass("selected");
-    $(selectedItem).addClass("selected");
-    $("#GISSection").addClass("GISSection_4");
+fiveD.invest.setSelectedGisTab = function (obj) {
+    var parentObj = $(obj).closest(".personDataMainLayout");
+    $(parentObj).find(".gisTabs li").removeClass("selected");
+    $(obj).addClass("selected");
+    $(parentObj).find("#GISSection").addClass("GISSection_4");
 }
 
-fiveD.invest.setSecondSelectedGisTab = function () {
-    $("#GISSection").addClass("GISSection_3");
+fiveD.invest.setSecondSelectedGisTab = function (obj) {
+    var parentObj = $(obj).closest(".personDataMainLayout");
+    $(parentObj).find("#GISSection").addClass("GISSection_3");
 }
 
 fiveD.invest.renderPersonGISContent = function (taskId, isBuilding) {
@@ -489,9 +523,31 @@ fiveD.invest.renderPersonGISContent = function (taskId, isBuilding) {
     html.push('          <li onclick="fiveD.invest.setSelectedGisTab(this)">24 hrs</li>');
     html.push('          <li onclick="fiveD.invest.setSelectedGisTab(this)">Night time</li>');
     html.push('     </ul>');
-    html.push('     <div id="rangeDateTime"><label for="from">From</label>&nbsp;<input type="text" id="txtFrom" name="txtFrom">&nbsp;<label for="txtTo">to</label>&nbsp;<input type="text" id="txtTo" name="txtTo"><div class="btnDateRangeDone" onclick="fiveD.invest.setSecondSelectedGisTab()">Done</div></div>');
+    html.push('     <div id="rangeDateTime"><label for="from">From</label>&nbsp;<input type="text" id="txtFrom" name="txtFrom">&nbsp;<label for="txtTo">to</label>&nbsp;<input type="text" id="txtTo" name="txtTo"><div class="btnDateRangeDone" onclick="fiveD.invest.setSecondSelectedGisTab(this)">Done</div></div>');
     html.push('</div>');
     html.push('<div id="GISSection" ondblclick="fiveD.invest.renderBuildingEntity(this)">');
+    html.push('</div>');
+    html.push('<div class="bottom-nav">');
+    html.push('     <ul class="clearAfter">');
+    html.push('         <li>Follow</li>');
+    html.push('         <li>Ask more info</li>');
+    html.push('         <li>Alert</li>');
+    html.push('     </ul>');
+    html.push('</div>');
+    return html.join("\n");
+}
+
+fiveD.invest.renderPersonGISContentForGISCase = function (taskId, isBuilding) {
+    var html = [];
+    html.push('<div class="top-nav top-nav-GIS">');
+    html.push('     <ul class="gisTabs">');
+    html.push('          <li class="selected" onclick="fiveD.invest.setSelectedGisTab(this)">Day time</li>');
+    html.push('          <li onclick="fiveD.invest.setSelectedGisTab(this)">24 hrs</li>');
+    html.push('          <li onclick="fiveD.invest.setSelectedGisTab(this)">Night time</li>');
+    html.push('     </ul>');
+    html.push('     <div id="rangeDateTime"><label for="from">From</label>&nbsp;<input type="text" id="txtFrom" name="txtFrom">&nbsp;<label for="txtTo">to</label>&nbsp;<input type="text" id="txtTo" name="txtTo"><div class="btnDateRangeDone" onclick="fiveD.invest.setSecondSelectedGisTab(this)">Done</div></div>');
+    html.push('</div>');
+    html.push('<div id="GISSection" class="GISSection_2" ondblclick="fiveD.invest.renderBuildingEntity(this)">');
     html.push('</div>');
     html.push('<div class="bottom-nav">');
     html.push('     <ul class="clearAfter">');

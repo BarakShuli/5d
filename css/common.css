@@ -294,14 +294,19 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .taskItemContent {
-    font-size: 14px;
-    color: #757575;
+    font-weight: bold;
+    font-size: 12px;
+    color: #212121;
     width: 167px;
     cursor: pointer;
     min-height: 20px;
     position: relative;
-    right: 15px;
-
+    top: 50%;
+    left:5px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    line-height: 19px;
 }
 
 #rightSection
@@ -963,8 +968,13 @@ input:-moz-placeholder {  font-style: italic; }
 .topRightToolBar{
     position:absolute;
     top:0px;
-    right:5px;
+    right:0px;
+}
 
+.showMSGBox .topRightToolBar{
+    position:absolute;
+    top:15px;
+    right:-5px;
 }
 
 #GISSection{
@@ -1088,6 +1098,16 @@ input:-moz-placeholder {  font-style: italic; }
     margin:25px 0px 0px 0px
 }
 
+.timeLine_0
+{
+    background-image: url("../img/timeLine_0.jpg");
+    background-repeat: no-repeat;
+    background-size:686px 63px;
+    width:686px;
+    height:63px;
+    cursor:pointer;
+}
+
 .timeLine_1
 {
     background-image: url("../img/timeLine_1.jpg");
@@ -1121,7 +1141,6 @@ input:-moz-placeholder {  font-style: italic; }
 
 .showMSGBox
 {
-    border:solid 1px #000000;
     width: 270px;
     height: 350px;
     background-image:url("../img/TextMessages.png");
@@ -1187,5 +1206,16 @@ input:-moz-placeholder {  font-style: italic; }
 #btnResetTimeLine
 {
     width:100px;height:50px;position:absolute;right:-100px;cursor:pointer;
+}
+
+.entityColorSign
+{
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:15px;
+    height:15px;
+    border-radius:10px;
+    z-index:9999;
 }
 /* ===== INVESTIGATION END ====== */

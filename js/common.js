@@ -60,6 +60,8 @@ fiveD = {
         var self = this, data = self.dataObj.task;
         $(".taskItem .taskContainer").each(function(index){
             $(this).find(".taskItemBullet").addClass(self.taskBulletTypeObj[data[index].type]);
+            $(this).find(".accordion-circle").addClass(self.followListCircleType[data[index].type]);
+            $(this).find(".accordion-circle").html(data[index].rank);
             $(this).find(".taskItemContent").html(data[index].title);
             $(this).next().html(data[index].description);
             $(this).attr("taskId", data[index].taskId);
