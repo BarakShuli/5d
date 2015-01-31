@@ -53,8 +53,9 @@ fiveD.invest = {
                     fiveD.invest.renderGisCase(ui, false, $(ui.draggable).attr("entityId"), false);
                 } else {
                     fiveD.invest.renderPerson(ui, false, $(ui.draggable).attr("entityId"), false);
+                    fiveD.invest.setTimelineByEntityId($(ui.draggable).attr("entityId"));
                 }
-                fiveD.invest.setTimelineByEntityId($(ui.draggable).attr("entityId"));
+                
                 fiveD.invest.initDraggableEvent();
             }
         });
@@ -154,7 +155,7 @@ fiveD.invest.initEntityDataTabsEvent = function () {
 
 fiveD.invest.setSelectedTab = function (activeTabContent, obj) {
     var className = "selected";
-    if(activeTabContent === "renderPersonGISContent" && obj === "userGIS"){
+    if ((activeTabContent === "renderPersonGISContent" || activeTabContent === "renderPersonGISContentForGISCase") && obj === "userGIS") {
         return className;
     }else if(activeTabContent === "renderPersonLinksContent" && obj === "userLinks"){
         return className;
@@ -250,7 +251,7 @@ fiveD.invest.renderGisCase = function (ui, container, entityId) {
 }
 
 fiveD.invest.changeTimeLineUI = function (obj) {
-    var stepId = parseInt($(obj).attr("stepId"));
+    /*var stepId = parseInt($(obj).attr("stepId"));
     if (stepId + 1 <= 3) {
         if (stepId + 1 === 3) {
             if (stepId === 2 && this.isTimeLineTextMsgClosed === false) {
@@ -265,7 +266,8 @@ fiveD.invest.changeTimeLineUI = function (obj) {
             $(obj).removeClass("timeLine_" + (stepId));
             $(obj).addClass("timeLine_" + (stepId + 1));
         }   
-    }   
+    } */
+    $(".showMSGBox").show();
 }
 
 fiveD.invest.setFocuIn = function (obj) {
@@ -319,8 +321,14 @@ fiveD.invest.renderPersonDataMainLayout = function (funcName, obj, isBuildingEnt
     html.push('        </div>');
     html.push('        <ul class="mainLayoutTabs">');
     html.push('            <li class="userId '+ this.setSelectedTab(invokfunction, "userId") +'" functionName="renderPersonIDContent">ID</li>');
-    html.push('            <li class="userGIS '+ this.setSelectedTab(invokfunction, "userGIS") +'" functionName="renderPersonGISContent">GIS</li>');
-    html.push('            <li class="userLinks '+ this.setSelectedTab(invokfunction, "userLinks") +'" functionName="renderPersonLinksContent">Links</li>');
+    if (funcName === "renderPersonGISContentForGISCase") {
+        html.push('            <li class="userGIS ' + this.setSelectedTab(invokfunction, "userGIS") + '" functionName="renderPersonGISContentForGISCase">GIS</li>');
+    } else {
+        html.push('            <li class="userGIS ' + this.setSelectedTab(invokfunction, "userGIS") + '" functionName="renderPersonGISContent">GIS</li>');
+    }
+    
+
+    html.push('            <li class="userLinks ' + this.setSelectedTab(invokfunction, "userLinks") + '" functionName="renderPersonLinksContent">Links</li>');
     html.push('            <li class="userData ' + this.setSelectedTab(invokfunction, "userData") + '" functionName="renderPersonDataContent">Data</li>');
     html.push('            <li class="userRiskFactors ' + this.setSelectedTab(invokfunction, "userRiskFactors") + '" functionName="renderPersonRiskFactorsContent">Risk Factors</li>');
     html.push('            <li class="userNotifications ' + this.setSelectedTab(invokfunction, "userNotifications") + '" functionName="renderPersonNotificationsContent">Notifications</li>');

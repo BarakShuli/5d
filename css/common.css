@@ -978,7 +978,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 #GISSection{
-    background-image: url("../img/gis_1.png");
+    background-image: url("../img/gis_1.jpg");
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 532px 412px;
@@ -987,7 +987,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .GISSection_2{
-    background-image: url("../img/gis_2.png")!important;
+    background-image: url("../img/gis_2.jpg")!important;
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 532px 412px;
@@ -996,7 +996,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .GISSection_3{
-    background-image: url("../img/gis_3.png")!important;
+    background-image: url("../img/gis_3.jpg")!important;
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 532px 412px;
@@ -1005,7 +1005,7 @@ input:-moz-placeholder {  font-style: italic; }
 }
 
 .GISSection_4{
-    background-image: url("../img/4.jpg")!important;
+    background-image: url("../img/gis_4.jpg")!important;
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: 532px 412px;
@@ -1132,6 +1132,16 @@ input:-moz-placeholder {  font-style: italic; }
 .timeLine_3
 {
     background-image: url("../img/timeLine_3.jpg");
+    background-repeat: no-repeat;
+    background-size:686px 63px;
+    width:686px;
+    height:63px;
+    cursor:pointer;
+}
+
+.timeLine_4
+{
+    background-image: url("../img/timeLine_4.jpg");
     background-repeat: no-repeat;
     background-size:686px 63px;
     width:686px;

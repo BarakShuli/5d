@@ -73,8 +73,8 @@
                 "rolePosition": "Active participant  at mosque",
                 "image": "omar.jpg",
                 "rank": "32",
-				"timeLineImg" : "timeLine_2",
-				"signBG" : "#7DBCE3"
+				"timeLineImg" : "timeLine_3",
+				"signBG" : "#FB9506"
             },
             "4": {
                 "id": "4",
@@ -98,8 +98,8 @@
                 "rolePosition": "Active participant  at mosque",
                 "image": "ahmed.jpg",
                 "rank": "24",
-				"timeLineImg" : "timeLine_3",
-				"signBG" : "#FB9506"
+				"timeLineImg" : "timeLine_4",
+				"signBG" : "#A4DC3B"
             }
         }
     ],
