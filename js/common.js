@@ -42,7 +42,11 @@ fiveD = {
 
         $(".taskDescription").click(function () {
             var taskId = $(this).prev().attr("taskId");
+            var morePeople = $(this).prev().attr("morePeople");
+            var showExtraData = $(this).prev().attr("showExtraData");
             localStorage.setItem("taksId", taskId);
+            localStorage.setItem("morePeople", morePeople);
+            localStorage.setItem("showExtraData", showExtraData);
             window.location = "investigation.html";
         });
 
@@ -65,8 +69,47 @@ fiveD = {
             $(this).find(".taskItemContent").html(data[index].title);
             $(this).next().html(data[index].description);
             $(this).attr("taskId", data[index].taskId);
+            $(this).attr("morePeople", data[index].morePeople);
+            $(this).attr("showExtraData", data[index].showExtraData);
 
         });
+    },
+
+    updateListDataInit: function(updateListType){
+        var html = [], data = "";
+        if (updateListType) {
+            data = this.dataObj[updateListType][0];
+        } else {
+            data = this.dataObj.updateCase[0];
+        }
+        $("#updateItemlist").mCustomScrollbar("destroy");
+        $("#updateItemlist").fadeOut().hide().html("");
+        for (var item in data) {
+                html = [];
+                html.push('<div class="updateItem" itemId="' + item + '">');
+                html.push(' <img src="img/' + data[item].imgUrl + '" width="210" height="138" />');
+                html.push(' <div class="updateItemData">');
+                html.push('  <div class="clearAfter">');
+                html.push('   <div class="timeAndDate">' + data[item].timeAndDate + '</div>');
+                html.push('   <div class="writtenBy">By ' + data[item].writtenBy + '</div>');
+                html.push('  </div>');
+                html.push('  <div class="title">' + data[item].title + '</div>');
+                html.push('  <div class="description">' + data[item].shortDescription + '</div>');
+                html.push('  <div class="learnMoreLink">Learn More</div>');
+                html.push(' </div>');
+                html.push('</div>');
+                $("#updateItemlist").append(html.join("\n"));
+        }
+        $("#updateItemlist").fadeIn("fast");
+        if (Object.keys(data).length > 3) {
+            $("#updateItemlist").mCustomScrollbar({
+                scrollButtons: { enable: true },
+                theme: "minimal-dark",
+                scrollbarPosition: "outside"
+            });
+        }
+        
+
     },
 
     notificationDataInit : function(){
@@ -131,4 +174,5 @@ $(document).ready(function () {
     fiveD.notificationDataInit();
     fiveD.followListDataInit();
     fiveD.openCasesDataInit();
+    fiveD.updateListDataInit(false);
 });

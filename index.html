@@ -4,9 +4,11 @@
         <title>5D</title>
         <link rel="stylesheet" href="css/jquery-ui.css">
         <link rel="stylesheet" type="text/css" href="css/common.css" />
+        <link rel="stylesheet" type="text/css" href="css/mCustomScrollbar.css" />
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/common.js"></script>
-        <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        <script src="js/JqueryUI.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
         
     </head>
     <body>
@@ -351,11 +353,11 @@
                         <header class="clearAfter">
                             <div class="updateTitle"></div>
                             <div class="updatetabsList clearAfter">
-                                <div class="updateTab selectedTab">All Updates</div>
+                                <div class="updateTab selectedTab" onclick="fiveD.updateListDataInit(false)">All Updates</div>
                                 <div class="smallLine"></div>
-                                <div class="updateTab">Branch Only</div>
+                                <div class="updateTab" onclick="fiveD.updateListDataInit('updateCaseBranch')">Branch Only</div>
                                 <div class="smallLine"></div>
-                                <div class="updateTab">Reginal Only</div>
+                                <div class="updateTab" onclick="fiveD.updateListDataInit('updateCaseReginal')">Reginal Only</div>
                             </div>
                         
                         </header>

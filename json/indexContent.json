@@ -49,8 +49,117 @@
 
         }
     ],
-
-
+	"updateCase" : [
+        {
+            "1": {
+				"id": "1",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_1",
+				"title": "my title my title my title my titleShuli_1",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			},
+			"2": {
+				"id": "2",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_2",
+				"title": "my title my title my title my titleShuli_2",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			},
+			"3": {
+				"id": "3",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_3",
+				"title": "my title my title my title my titleShuli_3",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			},
+			"4": {
+				"id": "4",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_4",
+				"title": "my title my title my title my titleShuli_4",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			},
+			"5": {
+				"id": "5",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_5",
+				"title": "my title my title my title my titleShuli_5",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			},
+			"6": {
+				"id": "6",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_6",
+				"title": "my title my title my title my titleShuli_6",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			}
+        }
+    ],
+	"updateCaseBranch" : [
+        {
+            "1": {
+				"id": "1",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli",
+				"title": "my title my title my title my title",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			},
+			"3": {
+				"id": "3",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_3",
+				"title": "my title my title my title my titleShuli_3",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			},
+			"4": {
+				"id": "4",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_4",
+				"title": "my title my title my title my titleShuli_4",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			},
+			"5": {
+				"id": "5",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_5",
+				"title": "my title my title my title my titleShuli_5",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			}
+        }
+    ],
+	"updateCaseReginal" : [
+        {
+            "3": {
+				"id": "1",
+				"timeAndDate": "3 minutes ago",
+				"writtenBy": "Barman Shuli_3",
+				"title": "my title my title my title my titleShuli_3",
+				"shortDescription": "Chris Janssens Chris Janssens Chris Janssens",
+				"fullDescription" : "babab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa babababab abab abababab babbaba babababa baba",
+				"imgUrl": "updateItemImage.png"
+			}
+        }
+    ],
     "notification": [
         {
             "type": "info",
@@ -140,7 +249,9 @@
 			"rank": "38",
 			"title" : "Samir Abu-Musa Halil Samir Abu-Musa Halil",
             "description" : "Samir Abu-Musa Halil 86: Suspected terror activity in Brussels",
-            "taskId" : "1"
+            "taskId" : "1",
+			"morePeople" : [2,3],
+			"showExtraData":true
 
         },
         {
@@ -148,21 +259,27 @@
 			"rank": "76",
 			"title" : "Abu Omar al-Saif",
             "description" : "Abu Omar al-Saif 80: Alarming location",
-            "taskId" : "2"
+            "taskId" : "2",
+			"morePeople" : [1,2,3,4,5,6],
+			"showExtraData":false
         },
         {
             "type" : "red",
 			"rank": "89",
 			"title" : "Kamel Rabat Bouralha Kamel Rabat Bouralha",
             "description" : "Kamel Rabat Bouralha 78: link pattern",
-            "taskId" : "3"
+            "taskId" : "3",
+			"morePeople" : [4,5,6],
+			"showExtraData":false
         },
         {
             "type" : "red",
 			"rank": "99",
 			"title" : "Jean De Boe 78",
             "description" : "Jean De Boe 78: Several alarming activities",
-            "taskId" : "4"
+            "taskId" : "4",
+			"morePeople" : [1,5,6,4],
+			"showExtraData":false
 
         },
         {
@@ -170,14 +287,18 @@
 			"rank": "22",
 			"title" : "Investigate",
             "description" : "Investigate the Scarface gang Investigate the Scarface gang Investigate the Scarface gang Investigate the Scarface gang",
-            "taskId" : "5"
+            "taskId" : "5",
+			"morePeople" : [1,5,6,4],
+			"showExtraData":false
         },
         {
             "type" : "orange",
 			"rank": "34",
 			"title" : "Andre Soudy",
             "description" : "Andre Soudy 50: Manage collection",
-            "taskId" : "6"
+            "taskId" : "6",
+			"morePeople" : [1,5,4],
+			"showExtraData":false
         }
     ]
 }

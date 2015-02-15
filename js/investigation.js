@@ -25,9 +25,14 @@ fiveD.invest = {
         if (localStorage.getItem("taksId") !== undefined) {
             var taskId = localStorage.getItem("taksId");
             //this.renderPerson();
-            this.renderPersonDataMainLayout(false, false, false);
-            this.renderPersonDataMainLayout("renderPersonGISContent", false, false);
-            this.renderPersonDataMainLayout("renderPersonLinksContent", false, false);
+            if (localStorage.getItem("showExtraData") !== undefined && localStorage.getItem("showExtraData") === "true") {
+                this.renderPersonDataMainLayout(false, false, false);
+                this.renderPersonDataMainLayout("renderPersonGISContent", false, false);
+                this.renderPersonDataMainLayout("renderPersonLinksContent", false, false);
+            } else {
+                this.renderPersonDataMainLayout(false, false, false);
+            }
+            
             this.initDraggableEvent();
             this.setTimelineByEntityId(taskId);
         }
@@ -167,22 +172,31 @@ fiveD.invest.setSelectedTab = function (activeTabContent, obj) {
 }
 
 fiveD.invest.renderPeopleItems = function () {
-    var html = [];
-    var data = this.dataObj.peopleList[0];
-    for (var item in data) {
-        if (item < 5) {
-            html = [];
-            html.push('<div class="followItem cloneFollowItem" entityId="' + item + '">');
-            html.push(' <div class="entityColorSign" style="background-color:' + data[item].signBG + '"></div>');
-            html.push(' <div class="follow-list-circle ' + this.peopleListCircleType[data[item].type] + '">' + data[item].rank + '</div>');
-            html.push(' <div class="followItem-description">');
-            html.push('  <div class="followItem-name">' + data[item].name + '</div>');
-            html.push('  <div class="followItem-id">' + data[item].id + '</div>');
-            html.push(' </div>');
-            html.push('  <img class="peopleImage" src="img/' + data[item].image + '"/>');
-            html.push('  <img class="maskImage" src="img/masking_for_faces_icon.png"/>');
-            html.push('</div>');
-            $("#peopleList").append(html.join("\n"));
+    var html = [],
+        data = this.dataObj.peopleList[0],
+        morePeopleList = localStorage.getItem("morePeople"),
+        morePeopleListArr = [];
+
+    morePeopleListArr = morePeopleList.split(",");
+    console.log(morePeopleListArr);
+
+
+    for (var x in morePeopleListArr) {
+        for (var item in data) {
+            if (item === morePeopleListArr[x]) {
+                html = [];
+                html.push('<div class="followItem cloneFollowItem" entityId="' + item + '">');
+                html.push(' <div class="entityColorSign" style="background-color:' + data[item].signBG + '"></div>');
+                html.push(' <div class="follow-list-circle ' + this.peopleListCircleType[data[item].type] + '">' + data[item].rank + '</div>');
+                html.push(' <div class="followItem-description">');
+                html.push('  <div class="followItem-name">' + data[item].name + '</div>');
+                html.push('  <div class="followItem-id">' + data[item].id + '</div>');
+                html.push(' </div>');
+                html.push('  <img class="peopleImage" src="img/' + data[item].image + '"/>');
+                html.push('  <img class="maskImage" src="img/masking_for_faces_icon.png"/>');
+                html.push('</div>');
+                $("#peopleList").append(html.join("\n"));
+            }
         }
     }  
 }

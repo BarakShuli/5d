@@ -629,7 +629,7 @@ input:-moz-placeholder {  font-style: italic; }
 #updatesContainer
 {
     width:697px;
-    height:380px;
+    height:420px;
     border:solid 1px #E1E1E1;
     overflow:hidden;
 }
@@ -639,10 +639,10 @@ input:-moz-placeholder {  font-style: italic; }
     margin:10px auto;
     width:670px;
     height: 402px;
-    background-image: url("../img/Updates.png");
+    /*background-image: url("../img/Updates.png");
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-size: 670px 402px;
+    background-size: 670px 402px;*/
 }
 
 #updatesContainer .updateItem
@@ -653,14 +653,53 @@ input:-moz-placeholder {  font-style: italic; }
     margin:2px;
     border:solid 1px #E1E1E1;
     background-color:#ffffff;
-    cursor:pointer;
+}
+
+#updatesContainer .updateItem .updateItemData
+{
+    margin:10px 0 0 10px;
+    height:125px;
+    position:relative;
+}
+
+#updatesContainer .updateItem .updateItemData .timeAndDate
+{
+    float:left;
+    color:#ADADAD;
+}
+
+#updatesContainer .updateItem .updateItemData  .writtenBy
+{
+    float:left;
+    color:#A5C27D;
+    text-decoration:underline;
+    margin-left:7px;
+}
+
+#updatesContainer .updateItem .updateItemData  .title
+{
+    color:#000000;
+    font-weight:bold;
+    font-size:16px;
+    margin:3px 0;
+}
+
+#updatesContainer .updateItem .updateItemData  .description
+{
+    color:#464646;
+    font-size:14px;
+    width:200px;
 }
 
 
-
-
-
-
+#updatesContainer .updateItem .updateItemData  .learnMoreLink
+{
+    color:#74A825;
+    font-size:14px;
+    position:absolute;
+    bottom:0px;right:8px;
+    cursor:pointer;
+}
 
 
 
